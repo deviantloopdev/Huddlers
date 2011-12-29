@@ -6,7 +6,10 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+
 gem 'devise', "~> 1.5.0"
+gem "rmagick"
+gem 'carrierwave'
 
 
 # Gems used only for assets and not required

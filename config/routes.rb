@@ -5,6 +5,8 @@ Huddlers::Application.routes.draw do
   get "newsfeed/index"
   
   get "huddlers_card/card"
+  
+  resources :pictures
 
   root :to => "newsfeed#index"
   # The priority is based upon order of creation:

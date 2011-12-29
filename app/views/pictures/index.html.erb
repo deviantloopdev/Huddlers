@@ -1,0 +1,13 @@
+<h1>Show all the pictures here.</h1>
+
+<div id="paintings">
+  <% for picture in Picture.all %>
+    <div class="painting">
+      <div class ="image_placeholder"></div>
+      <div class="name"><%= picture.name %></div>
+      
+    </div>
+  <% end %>
+  <div class="clear"></div>
+</div>
+
