@@ -12,10 +12,10 @@ development:
   adapter: postgresql
   encoding: unicode
   reconnect: false
-  database: huddlers_development
+  database: huddlers_devdb
   pool: 5
-  username: deviantloop
-  password: deviantloop1
+  username: postgres
+  password: scrtpsswrd
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -25,18 +25,18 @@ test:
   adapter: postgresql
   encoding: unicode
   reconnect: false
-  database: huddlers_test
+  database: huddlers_testdb
   pool: 5
-  username: deviantloop
-  password: deviantloop1
+  username: postgres
+  password: scrtpsswrd
   host: localhost
 
 production:
   adapter: postgresql
   encoding: unicode
   reconnect: false
-  database: huddlers_production
+  database: huddlers_proddb
   pool: 5
-  username: deviantloop
-  password: deviantloop1
+  username: postgres
+  password: scrtpsswrd
   host: localhost
