@@ -1,8 +1,87 @@
-<h1>My Huddlers Card</h1>
-
-<div id="left-sidebar">
-	Height: <%= current_user.height_ft %>' <%= current_user.height_in %>"<br />
-	Weight: <%= current_user.weight %><br />
-	Age: <%= current_user.age %><br />
-	City: <%= current_user.city %>
+<head>
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+<%= stylesheet_link_tag "huddlers_card.css" %>
+<%= javascript_include_tag "huddlers_card.js" %>
+</head>
+<body>
+<div class="topbar">
+<div class="fill">
+		<div class="container">
+		<h3><a href="#">Huddlers</a></h3>
+		<ul>
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Projects</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	<form action="">
+	<input type="text" placeholder="Search">
+	</form>
+	</div>
+	</div>
 </div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h1>My Huddlers Car</h1>
+<div id="terms" style="display:none;">
+<h1>It WORKS!</h1>
+</div>
+<body>
+	<div class="backdrop"></div>
+	<div class="msg_box">
+		<div class="close">x</div>
+		Friend: <div class="clearfix"><input class="span4" id="" name="" type="text" placeholder=".span4" /></div>
+		This is the lightbox!!!
+		<div class="input">
+              		<textarea class="xlarge" id="textarea2" name="textarea2" rows="3"></textarea>
+              		<span class="help-block">
+                	Block of help text to describe the field above if need be.
+              		</span>
+            	</div>
+		<button>SEND</button>
+		<a href="#" onclick="close_msg_box()"class="btn large">Cancel</a>
+	</div>
+	<div class="request_box">
+ 	<br />
+ 	<br />
+        	<center><a href="#" class="btn large primary">Send Friend Request?</a>
+        	<a href="#" onclick="close_request()"class="btn large">Cancel</a><center>
+        
+        </div>
+	</body>
+<a href="#" onclick="facebox_test()">Terms</a>
+
+<div class="row">
+	<br />
+	<br />
+	<div style="background-color:#e5e7d5;"class="span4">
+		<img src="/assets/rails.png" width="175px" height="175px">
+		<br />
+		<br />
+		Height: <%= current_user.height_ft %>' <%= current_user.height_in %>"<br />
+        	Weight: <%= current_user.weight %><br />
+        	Age: <%= current_user.age %><br />
+        	City: <%= current_user.city %>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<h4>Biography</h4>
+	</div>
+	<div style="background-color:#e9eaea;"class="span4">
+	yo
+	</div>
+	<div style="background-color:#e9eaea;"class="span9">
+	<button style="float:right;" onclick="" class="lightbox"  > Message</button>
+        <button style="float:right;" onclick="" class="lightbox2"> Add as a Team-Mate</button>
+	</div>
+</div>
+<br />
+<br />
+</body>
+
