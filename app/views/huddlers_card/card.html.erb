@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <head>
 <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
 <%= stylesheet_link_tag "huddlers_card.css" %>
@@ -79,9 +79,26 @@
 	<div style="background-color:#e9eaea;"class="span4">
 	yo
 	</div>
-	<div style="background-color:#e9eaea;"class="span9">
-	<button style="float:right;" onclick="" class="lightbox"  > Message</button>
-        <button style="float:right;" onclick="" class="lightbox2"> Add as a Team-Mate</button>
+	<div style="background-color:#e9eaea;" id="right-most" class="span9">
+		<button style="margin-right:10px; float:right;" onclick="" class="lightbox"  > Message</button>
+        	<button style="margin-right:10px; float:right;" onclick="" class="lightbox2"> Add as a Team-Mate</button>
+		<br/>
+		<br/>
+		<br/>
+		<div style="align:center;"id="shoutout_input">
+			<div style="display:block; margin-left:auto; margin-right:auto;" class="input">
+                        <textarea style=""class="xlarge" id="shoutout_textarea" name="textarea2" rows="3"></textarea>
+                        	<span class="help-block">
+                        		<a href="#">Like</a><a style="margin-left:10px;" href="#">Comment</a>
+                        	</span>
+                	</div>
+                <button onclick="shoutout_update(event)">POST</button>	
+		<br />
+		<br />
+		</div>
+		<div id="wall">
+		
+		</div>
 	</div>
 </div>
 <br />

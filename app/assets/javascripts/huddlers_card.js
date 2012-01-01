@@ -45,3 +45,19 @@ function close_request(){
         $('.backdrop, .request_box').css('display', 'none');
         });	
 }
+
+function publish(){
+	
+}
+
+function shoutout_update(event){
+        hash = event.timeStamp;
+        hash = hash.toString();
+        var prev_html = $("#wall").html();
+        str0 = prev_html;
+        str1 = '<div id="new'+hash+'">'+$("#shoutout_textarea").val()+'</div>';
+        str2 = '<hr/>';
+        str3 = '<a href="#">Like</a><a style="margin-left:10px;" href="#">Comment</a>';
+        $('#wall').html(str0 + str1 + str3 + str2);
+
+}
