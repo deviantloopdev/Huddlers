@@ -8,13 +8,12 @@ gem 'rails', '3.1.0'
 gem 'pg'
 
 gem 'devise', "~> 1.5.0"
-<<<<<<< HEAD
 gem 'facebox-rails'
-=======
-gem "rmagick"
+
+gem 'annotate'
 gem 'carrierwave'
 
->>>>>>> efd92c9c4d1f11aa2e4e05837d998e7f050afef5
+
 
 # Gems used only for assets and not required
 # in production environments by default.
