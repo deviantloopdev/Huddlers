@@ -31,7 +31,7 @@
 	<div class="backdrop"></div>
 	<div class="msg_box">
 		<div class="close">x</div>
-		Friend: <div class="clearfix"><input class="span4" id="" name="" type="text" placeholder=".span4" /></div>
+		Friend: <div class="clearfix"><input class="span4" id="" name="" type="text" placeholder="" /></div>
 		This is the lightbox!!!
 		<div class="input">
               		<textarea class="xlarge" id="textarea2" name="textarea2" rows="3"></textarea>
@@ -50,14 +50,12 @@
 </div>
 
 <a href="#" onclick="facebox_test()">Terms</a>
-<%= link_to "News Feed", :controller => "newsfeed" %>
-
 <h1>My Huddlers Card</h1>
 <div class="row">
 	<br />
 	<br />
 	<div style="background-color:#e5e7d5;"class="span4">
-		<img src="/assets/rails.png" width="175px" height="175px">
+		<center><img src="/assets/rails.png" width="175px" height="175px"></center>
 		<br />
 		<br />
 		Height: <%= current_user.height_ft %>' <%= current_user.height_in %>"<br />
@@ -77,6 +75,16 @@
 	<div style="background-color:#e9eaea;" id="right-most" class="span9">
 		<button style="margin-right:10px; float:right;" onclick="" class="lightbox"  > Message</button>
         	<button style="margin-right:10px; float:right;" onclick="" class="lightbox2"> Add as a Team-Mate</button>
+		<div id="activities_container" class="feed_container">
+			<h1>Recent Activities</h1>
+			<div id="Recent_Activities">
+				<div id="feed_parcel_container">
+					<div id="feed_parcel">
+					
+					</div>
+				</div>
+			</div>
+		</div>
 		<br/>
 		<br/>
 		<br/>
