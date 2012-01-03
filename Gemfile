@@ -8,7 +8,6 @@ gem 'rails', '3.1.0'
 gem 'pg'
 
 gem 'devise', "~> 1.5.0"
-gem "rmagick"
 gem 'carrierwave'
 
 

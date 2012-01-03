@@ -1,13 +1,15 @@
-<h1>Show all the pictures here.</h1>
+<h1>Paintings</h1>
 
 <div id="paintings">
-  <% for picture in Picture.all %>
-    <div class="painting">
-      <div class ="image_placeholder"></div>
+  <% for picture in current_user.pictures %>
+    <div class="picture">
       <div class="name"><%= picture.name %></div>
-      
+      <div class="image_placeholder"></div>
+      <div class="actions">
+      	<%= link_to "edit", edit_picture_path(picture) %>
+        <%= link_to "remove", picture, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
     </div>
   <% end %>
   <div class="clear"></div>
 </div>
-
