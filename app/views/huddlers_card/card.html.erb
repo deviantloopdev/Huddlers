@@ -1,10 +1,111 @@
-<%= link_to "News Feed", :controller => "newsfeed" %>
 
-<h1>My Huddlers Card</h1>
+<head>
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+<%= stylesheet_link_tag "huddlers_card.css" %>
+<%= javascript_include_tag "huddlers_card.js" %>
+</head>
 
-<div id="left-sidebar">
-	Height: <%= current_user.height_ft %>' <%= current_user.height_in %>"<br />
-	Weight: <%= current_user.weight %><br />
-	Age: <%= current_user.age %><br />
-	City: <%= current_user.city %>
+<body>
+<!-- <div class="topbar">
+<div class="fill">
+		<div class="container">
+		<h3><a href="#">Huddlers</a></h3>
+		<ul>
+			<li class="active"><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Projects</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	<form action="">
+	<input type="text" placeholder="Search">
+	</form>
+	</div>
+	</div>
+	</div>
+</div> -->
+<br />
+<br />
+<%= current_user.first_name + ' ' + current_user.last_name %>
+<body>
+<div style="" class="body-content">
+	<div class="backdrop"></div>
+	<div class="msg_box">
+		<div class="close">x</div>
+		Friend: <div class="clearfix"><input class="span4" id="" name="" type="text" placeholder="" /></div>
+		This is the lightbox!!!
+		<div class="input">
+              		<textarea class="xlarge" id="textarea2" name="textarea2" rows="3"></textarea>
+              		<span class="help-block">
+                	Block of help text to describe the field above if need be.
+              		</span>
+            	</div>
+		<button>SEND</button>
+		<a href="#" onclick="close_msg_box()"class="btn large">Cancel</a>
+	</div>
+	<div class="request_box">
+ 	<br />
+ 	<br />
+        	<center><a href="#" class="btn large primary">Send Friend Request?</a>
+        	<a href="#" onclick="close_request()"class="btn large">Cancel</a><center>
 </div>
+
+<a href="#" onclick="facebox_test()">Terms</a>
+<h1>My Huddlers Card</h1>
+<div class="row">
+	<br />
+	<br />
+	<div style="background-color:#e5e7d5;"class="span4">
+		<center><img src="/assets/rails.png" width="175px" height="175px"></center>
+		<br />
+		<br />
+		Height: <%= current_user.height_ft %>' <%= current_user.height_in %>"<br />
+        	Weight: <%= current_user.weight %><br />
+        	Age: <%= current_user.age %><br />
+        	City: <%= current_user.city %>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<h4>Biography</h4>
+	</div>
+	<div style="background-color:#e9eaea;"class="span4">
+	yo
+	</div>
+	<div style="background-color:#e9eaea;" id="right-most" class="span9">
+		<button style="margin-right:10px; float:right;" onclick="" class="lightbox"  > Message</button>
+        	<button style="margin-right:10px; float:right;" onclick="" class="lightbox2"> Add as a Team-Mate</button>
+		<div id="activities_container" class="feed_container">
+			<h1>Recent Activities</h1>
+			<div id="Recent_Activities">
+				<div id="feed_parcel_container">
+					<div id="feed_parcel">
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<br/>
+		<br/>
+		<div style="align:center;"id="shoutout_input">
+			<div style="display:block; margin-left:auto; margin-right:auto;" class="input">
+                        <textarea style=""class="xlarge" id="shoutout_textarea" name="textarea2" rows="3"></textarea>
+                        	<span class="help-block">
+                        		<a href="#">Like</a><a style="margin-left:10px;" href="#">Comment</a>
+                        	</span>
+                	</div>
+                <button onclick="shoutout_update(event)">POST</button>	
+		<br />
+		<br />
+		</div>
+		<div id="wall">
+		
+		</div>
+	</div>
+</div>
+<br />
+<br />
+</div>
+</body>
+

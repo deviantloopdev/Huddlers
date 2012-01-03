@@ -3,10 +3,13 @@ Huddlers::Application.routes.draw do
   devise_for :users
 
   get "newsfeed/index"
-  
   get "huddlers_card/card"
+
+  get "huddlers_card/trophy_room"
+
   
   resources :pictures
+
 
   root :to => "newsfeed#index"
   # The priority is based upon order of creation:

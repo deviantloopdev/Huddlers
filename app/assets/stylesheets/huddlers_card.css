@@ -1,0 +1,91 @@
+/*Huddlers Card StyleSheet*/
+
+body
+{
+	font-family: Helvetica, Arial;
+}
+
+.backdrop
+{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	background:#000;
+	opacity: .0;
+	filter:alpha(opacity=0);
+	z-index:50;
+	display:none;
+}
+ 
+ 
+.msg_box
+{
+	position:absolute;
+	top:20%;
+	left:30%;
+	width:500px;
+	height:300px;
+	background:#ffffff;
+	z-index:51;
+	padding:10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow:0px 0px 5px #444444;
+	-webkit-box-shadow:0px 0px 5px #444444;
+	box-shadow:0px 0px 5px #444444;
+	display:none;
+}
+
+.request_box
+{
+        position:absolute;
+        top:20%;
+        left:30%;
+        width:500px;
+        height:100px;
+        background:#ffffff;
+        z-index:51;
+        padding:10px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -moz-box-shadow:0px 0px 5px #444444;
+        -webkit-box-shadow:0px 0px 5px #444444;
+        box-shadow:0px 0px 5px #444444;
+        display:none;
+}
+
+
+.close
+{
+	float:right;
+	margin-right:6px;
+	cursor:pointer;
+} 
+
+#activites_container
+{
+
+}
+
+#Recent_Activities
+{
+	height:300px;
+	background-color:#ffffff;
+	border-radius :15px;
+	padding: 30px 30px;
+	
+}
+
+#feed_parcel_container
+{
+
+}
+
+#feed_parcel
+{
+
+}

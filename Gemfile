@@ -8,7 +8,10 @@ gem 'rails', '3.1.0'
 gem 'pg'
 
 gem 'devise', "~> 1.5.0"
+gem 'facebox-rails'
+gem 'annotate'
 gem 'carrierwave'
+
 
 
 # Gems used only for assets and not required

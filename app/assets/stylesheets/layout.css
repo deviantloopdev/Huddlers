@@ -1,0 +1,33 @@
+/* This is the UL spread*/
+ul.googleTab
+{
+	background-color: #ffffff;
+	padding:0px 100px;
+	font-size:13px;
+	color:#002500;
+	overflow:hidden;
+	margin-left:-0px;
+	/*background:-moz-linear-gradient(0% 100% 90deg,#f5f5f5, #ffffff);*/
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#f5f5f5));
+}
+ul.googleTab li	{
+	float:left;
+	padding:7px 150px;
+	border-top:solid 2px #bad3ea;	
+}
+ul.googleTab li.active{
+	border-top: solid 3px #1a54e1;
+	color:#363636;
+	font-weight:bold;
+}
+ul.googleTab li:hover	{
+	background:#002500;
+	cursor:pointer;
+}
+
+.body-content
+{
+	width: 1100px;
+	margin-left:auto;
+	margin-right:auto;
+}

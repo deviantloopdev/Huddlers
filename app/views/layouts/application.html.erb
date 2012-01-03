@@ -4,16 +4,27 @@
   <title>Huddlers</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "layout.css" %>
+  <%= javascript_include_tag "layout.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div id="user_nav">
+<% if user_signed_in? %>
+<div id="topbar">
+	<ul class="googleTab">
+		<li class="active"><%= link_to "Huddlers", :controller => "newsfeed"%></li>	
+		<li><input type="text" value="Search"/></li>
+		<li><%= current_user.first_name + ' ' + current_user.last_name %> </li>
+	</ul>
+</div>
+ <% end %>
+<!--	<div style="display:none;" id="user_nav">
 	  <% if user_signed_in? %>
 	    Signed in as <%= current_user.email %>. Not you?
 	    <%= link_to "Sign Out", destroy_user_session_path %>
 	  <% end %>
-	</div>	
-	
+	</div>-->
+
 	<%= yield %>
 
 </body>
