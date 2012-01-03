@@ -1,13 +1,14 @@
 class PicturesController < ApplicationController
   def new
-    @picture = Picture.new
+    @picture = Picture.new(:user_id => current_user.id)
   end
 
   def create
     @picture = Picture.new(params[:picture])
     if @picture.save
-      flash[:notice] = "Successfully created picture."
-      render :action => 'index'
+      flash[:notice] = "Successfully created painting."
+      # redirect_to @picture.gallery
+      redirect_to :controller => 'pictures'
     else
       render :action => 'new'
     end
@@ -16,16 +17,14 @@ class PicturesController < ApplicationController
   def edit
     @picture = Picture.find(params[:id])
   end
-  
-  def index
-    @picture = Picture.all
-  end
 
   def update
     @picture = Picture.find(params[:id])
+    
     if @picture.update_attributes(params[:picture])
-      flash[:notice] = "Successfully updated picture."
-      render :action => 'index' # TODO: REDIRECT INSTEAD!
+      # flash[:notice] = "Successfully updated painting."
+      # # redirect_to @picture.gallery
+      redirect_to :controller => 'pictures'
     else
       render :action => 'edit'
     end
@@ -34,7 +33,8 @@ class PicturesController < ApplicationController
   def destroy
     @picture = Picture.find(params[:id])
     @picture.destroy
-    flash[:notice] = "Successfully destroyed picture."
-    redirect_to 'index'  # TODO: REDIRECT INSTEAD!
+    flash[:notice] = "Successfully destroyed painting."
+    # redirect_to @picture.gallery
+    redirect_to :controller => 'pictures'
   end
 end

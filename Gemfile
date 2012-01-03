@@ -9,7 +9,6 @@ gem 'pg'
 
 gem 'devise', "~> 1.5.0"
 gem 'facebox-rails'
-
 gem 'annotate'
 gem 'carrierwave'
 
