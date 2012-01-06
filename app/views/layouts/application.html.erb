@@ -1,3 +1,31 @@
+<style>
+	#navlist li
+	{
+		display: inline;
+		display: table-cell;
+		height: 30px;
+		list-style-type: none;
+		vertical-align: middle;
+		padding-top: 3px;
+		padding-right: 5px;
+	}
+	
+	#q
+	{
+		width: 400px;
+		border-radius: 10px;
+		outline: none;
+		padding-left: 8px;
+	}
+	
+	.submit_tag
+	{
+		height: 20px;
+		width: 20px;
+		vertical-align: middle;
+	}
+</style>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +38,7 @@
 </head>
 
 <body>
+	<% if user_signed_in? %>
 	<div id="container" style="height:60px; background-image: linear-gradient(bottom, #002100 1%, #003400 51%);
 								background-image: -o-linear-gradient(bottom, #002100 1%, #003400 51%);
 								background-image: -moz-linear-gradient(bottom, #002100 1%, #003400 51%);
@@ -22,20 +51,24 @@
 									color-stop(0.01, #002100),
 									color-stop(0.51, #003400));" >
 		<div id="greenBar">
-				<div id="loggedInMenubar" style="width:1088px; min-width:980px; margin:0 auto; padding-top:17px;">
-					<div id="logoContainer" style="width:187px; padding-left: 30px; z-index:5; float:left;">
+				<div id="loggedInMenubar" style="width:1088px; min-width:980px; margin:0 auto;">
+					<div id="logoContainer" style="width:187px; padding-left: 30px; padding-top:17px; z-index:5; float:left;">
 						<img src="/assets/Huddlers_Logo.png" style="height:25px;"/>
 					</div>
-					<div id="headNav" style="padding-left: 247px; z-index:4;">
-						<div id="searchForm" style="float:left;">
+					<div id="headNav" style="padding-left: 277px; z-index:4;">
+						<div id="searchForm" class="search" style="float:left; padding-top:17px;">
 							<%= form_tag("/search", :method => "get") do %>
 							<%= label_tag(:q, "") %>
 							<%= text_field_tag(:q) %>
-							<%= submit_tag("Search") %>
+							<%= image_submit_tag("/assets/btn_search.png", :class => "submit_tag") %>
 							<% end %>
 						</div>
-						<div id="userMenu" style="float:right; color: #9DC975;">
-							<%= current_user.first_name %> <%= current_user.last_name %>
+						<div id="userNavContainer" style="float:right; color: #9DC975; font-size:12px; z-index:4;">
+							<ul id="navlist" style="display: table;">
+								<a href="#" style="text-decoration: none;"><li id="active"><img src="/assets/profile.png" height="30" width="30" /></li>
+								<li style="color:#9DC975;"><%= current_user.first_name %> <%= current_user.last_name %></li></a>
+								<li><a href="#"><img src="/assets/btn_dropdown.png" height="15" width="15"/ ></a></li>
+							</ul>
 						</div>
 					</div>					
 				</div>
@@ -58,8 +91,9 @@
 	    <%= link_to "Sign Out", destroy_user_session_path %>
 	  <% end %>
 	</div>-->
-
+<% end %>
 	<%= yield %>
 
 </body>
+
 </html>
