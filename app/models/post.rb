@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  has_many :upvotes, :comments
+  has_many :fans, :comments
 
   #To make sure that it is not an empty post
   validates_presence_of :body
@@ -17,3 +17,4 @@ end
 #recipient_id
 #group/friend/self bool
 #body => text
+#private?
