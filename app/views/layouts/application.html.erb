@@ -2,22 +2,56 @@
 <html>
 <head>
   <title>Huddlers</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application.css" %>
+  <%= javascript_include_tag "application.js" %>
   <%= stylesheet_link_tag "layout.css" %>
   <%= javascript_include_tag "layout.js" %>
-  <%= csrf_meta_tags %>
+  <%= csrf_meta_tags %> 
 </head>
+
 <body>
-<% if user_signed_in? %>
-<div id="topbar">
-	<ul class="googleTab">
-		<li class="active"><%= link_to "Huddlers", :controller => "newsfeed"%></li>	
-		<li><input type="text" value="Search"/></li>
-		<li><%= current_user.first_name + ' ' + current_user.last_name %> </li>
-	</ul>
-</div>
- <% end %>
+	<div id="container" style="height:60px; background-image: linear-gradient(bottom, #002100 1%, #003400 51%);
+								background-image: -o-linear-gradient(bottom, #002100 1%, #003400 51%);
+								background-image: -moz-linear-gradient(bottom, #002100 1%, #003400 51%);
+								background-image: -webkit-linear-gradient(bottom, #002100 1%, #003400 51%);
+								background-image: -ms-linear-gradient(bottom, #002100 1%, #003400 51%);
+								background-image: -webkit-gradient(
+									linear,
+									left bottom,
+									left top,
+									color-stop(0.01, #002100),
+									color-stop(0.51, #003400));" >
+		<div id="greenBar">
+				<div id="loggedInMenubar" style="width:1088px; min-width:980px; margin:0 auto; padding-top:17px;">
+					<div id="logoContainer" style="width:187px; padding-left: 30px; z-index:5; float:left;">
+						<img src="/assets/Huddlers_Logo.png" style="height:25px;"/>
+					</div>
+					<div id="headNav" style="padding-left: 247px; z-index:4;">
+						<div id="searchForm" style="float:left;">
+							<%= form_tag("/search", :method => "get") do %>
+							<%= label_tag(:q, "") %>
+							<%= text_field_tag(:q) %>
+							<%= submit_tag("Search") %>
+							<% end %>
+						</div>
+						<div id="userMenu" style="float:right; color: #9DC975;">
+							<%= current_user.first_name %> <%= current_user.last_name %>
+						</div>
+					</div>					
+				</div>
+		</div>
+	</div>
+	
+	<div>
+		<div id="loggedOutContent">
+			<div id="footerContainer">
+				<div id="footer">
+					<p><font style="color:#000; font-size:12px;">&copy; Huddlers 2011. <b>Powered by Sponsorship</b></font></p>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--<%= yield %>-->
 <!--	<div style="display:none;" id="user_nav">
 	  <% if user_signed_in? %>
 	    Signed in as <%= current_user.email %>. Not you?
