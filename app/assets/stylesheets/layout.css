@@ -8,7 +8,7 @@ ul.googleTab
 	overflow:hidden;
 	margin-left:-0px;
 	/*background:-moz-linear-gradient(0% 100% 90deg,#f5f5f5, #ffffff);*/
-	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#f5f5f5));
+/*	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#f5f5f5));*/
 }
 ul.googleTab li	{
 	float:left;
