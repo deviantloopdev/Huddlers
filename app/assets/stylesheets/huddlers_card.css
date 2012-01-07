@@ -71,13 +71,17 @@ body
 
 }
 
-#Recent_Activities
+.title
 {
-	height:300px;
-	background-color:#ffffff;
-	border-radius :15px;
-	padding: 30px 30px;
 	
+}
+
+
+.column-content
+{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 #feed_parcel_container

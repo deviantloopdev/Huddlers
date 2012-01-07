@@ -1,31 +1,12 @@
 <head>
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
 <%= stylesheet_link_tag "huddlers_card.css" %>
 <%= javascript_include_tag "huddlers_card.js" %>
 
 </head>
 
-<body>
-<!-- <div class="topbar">
-<div class="fill">
-		<div class="container">
-		<h3><a href="#">Huddlers</a></h3>
-		<ul>
-			<li class="active"><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Projects</a></li>
-			<li><a href="#">Contact</a></li>
-		</ul>
-	<form action="">
-	<input type="text" placeholder="Search">
-	</form>
-	</div>
-	</div>
-	</div>
-</div> -->
-<br />
-<br />
-<%= current_user.first_name + ' ' + current_user.last_name %>
+
 <body>
 <div style="" class="body-content">
 	<div class="backdrop"></div>
@@ -48,13 +29,18 @@
         	<center><a href="#" class="btn large primary">Send Friend Request?</a>
         	<a href="#" onclick="close_request()"class="btn large">Cancel</a><center>
 </div>
-
-<a href="#" onclick="facebox_test()">Terms</a>
 <h1>My Huddlers Card</h1>
 <div class="row">
 	<br />
 	<br />
-	<div style="background-color:#e5e7d5;"class="span4">
+	<div style="margin-top:-120px;background-color:#e5e7d5;"class="span4">
+		<div class="column-content">
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
 		<center><img src="/assets/rails.png" width="175px" height="175px"></center>
 		<br />
 		<br />
@@ -65,19 +51,36 @@
 		<br />
 		<br />
 		<br />
-		<br />
-		<br />
+	
+		
 		<h4>Biography</h4>
+		</div>
 	</div>
-	<div style="background-color:#e9eaea;"class="span4">
-	yo
+	
+	<div style="margin-top:20px;background-color:#e9eaea;"class="span4">
+		<h1 class="big-title">Achievements</h1>
+		<div id="achievements" style="height:200px;" class="content-box">
+		yo
+		</div>
+		<h1 class="title">Sports</h1>
+		<div id="sports" style="height:200px;"class="content-box">
+		yo
+		</div>
+		<h1 class="title">Equipment - #add erb for chosen support</h1>
+		<div id="equipments" style="height:200px;"class="content-box">
+		yo
+		</div>
+		<h1 class="title">My Teams</h1>
+		<div id="my_teams" style="height:200px;" class="content-box">
+		yo
+		</div>
 	</div>
 	<div style="background-color:#e9eaea;" id="right-most" class="span9">
 		<button style="margin-right:10px; float:right;" onclick="" class="lightbox"  > Message</button>
         	<button style="margin-right:10px; float:right;" onclick="" class="lightbox2"> Add as a Team-Mate</button>
 		<div id="activities_container" class="feed_container">
-			<h1>Recent Activities</h1>
-			<div id="Recent_Activities">
+			<h1 class="big-title">Recent Activities</h1>
+			<div id="" class="content-box">
 				<div id="feed_parcel_container">
 					<div id="feed_parcel">
 					
@@ -88,14 +91,14 @@
 		<br/>
 		<br/>
 		<br/>
-		<div style="align:center;"id="shoutout_input">
+		<div id="shoutout_input" class="column-content" >
 			<div style="display:block; margin-left:auto; margin-right:auto;" class="input">
                         <textarea style=""class="xlarge" id="shoutout_textarea" name="textarea2" rows="3"></textarea>
-                        	<span class="help-block">
+                        	<!-- <span class="help-block">
                         		<a href="#">Like</a><a style="margin-left:10px;" href="#">Comment</a>
-                        	</span>
+                        	</span> -->
                 	</div>
-                <button onclick="shoutout_update(event)">POST</button>	
+                <button onclick="shoutout_update(event);">POST</button>	
 		<br />
 		<br />
 		</div>

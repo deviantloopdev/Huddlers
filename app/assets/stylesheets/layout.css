@@ -31,3 +31,28 @@ ul.googleTab li:hover	{
 	margin-left:auto;
 	margin-right:auto;
 }
+
+.title
+{
+	font-family:'Josefin Sans', sans-serif;
+	font-weight: 300;
+	font-size:23px;
+}
+
+.big-title
+{
+        font-family:'Josefin Sans', sans-serif;
+        font-weight: 600;
+	font-size:30px;
+}
+
+.content-box
+{
+        height:300px;
+        background-color:#ffffff;
+        border-radius :15px;
+        padding: 30px 30px;
+        margin-left:15px;
+        margin-right:15px;
+
+}
