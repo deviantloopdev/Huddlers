@@ -1,5 +1,46 @@
-<h2>Sign in</h2>
+<div id="container" style="height:50px; background-image: linear-gradient(bottom, #002100 1%, #003400 51%);
+								background-image: -o-linear-gradient(bottom, #002100 1%, #003400 51%);
+								background-image: -moz-linear-gradient(bottom, #002100 1%, #003400 51%);
+								background-image: -webkit-linear-gradient(bottom, #002100 1%, #003400 51%);
+								background-image: -ms-linear-gradient(bottom, #002100 1%, #003400 51%);
+								background-image: -webkit-gradient(
+									linear,
+									left bottom,
+									left top,
+									color-stop(0.01, #002100),
+									color-stop(0.51, #003400));" >
+		<div id="greenBar">
+				<div id="loggedInMenubar" style="width:1088px; min-width:980px; margin:0 auto;">
+					<div id="logoContainer" style="width:187px; padding-left: 30px; padding-top:12px; z-index:5; float:left;">
+						<img src="/assets/Huddlers_Logo.png" style="height:25px;"/>
+					</div>
+					<div id="headNav" style="float:right; z-index:4;">
+						<div id="loginForm" class="search" style="float:left; padding-top:12px; color:#9DC975;">
+							<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	  						<div><%= f.label :email %>: <%= f.email_field :email %>
+	  						<%= f.label :password %>: <%= f.password_field :password %>
+	  						<%= f.submit "Sign in" %></div>
+	  						<% if devise_mapping.rememberable? -%>
+	  							<div style="float:right;"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+	  						<% end -%>
+	  						<% end %>
+						</div>
+					</div>					
+				</div>
+		</div>
+	</div>
+	
+	<div>
+		<div id="loggedOutContent">
+			<div id="footerContainer">
+				<div id="footer">
+					<p><font style="color:#000; font-size:12px;">&copy; Huddlers 2011. <b>Powered by Sponsorship</b></font></p>
+				</div>
+			</div>
+		</div>
+	</div>
 
+<!-- <h2>Sign in</h2>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
@@ -12,7 +53,7 @@
   <% end -%>
 
   <div><%= f.submit "Sign in" %></div>
-<% end %>
+<% end %> -->
 
 <%= render :partial => "devise/shared/links" %>
 

@@ -7,12 +7,12 @@
  *= require jquery.facebox
  *= require jquery.lightbox
 */
-=======
 body {
+  width:100%;
+  margin: 0 auto;
   background-color: #4B7399;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
-  padding-bottom: 250px;
 }
 
 a img {
@@ -30,12 +30,8 @@ a {
 }
 
 #container {
-  width: 75%;
   margin: 0 auto;
   background-color: #FFF;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
 }
 
 #flash_notice, #flash_error, #flash_alert {
@@ -114,4 +110,3 @@ a {
   text-align: center;
   color: #777;
 }
->>>>>>> efd92c9c4d1f11aa2e4e05837d998e7f050afef5
