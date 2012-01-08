@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
-   respond_to :html, :js
+  respond_to :html, :js
+  protect_from_forgery :except => :create
 
-  def index
+	def index
   	@post = Post.all
 		
 	end
@@ -19,7 +20,6 @@ class PostsController < ApplicationController
   def create
     
     @post = Post.new(
-    :id => 2,
     :body => params[:texty])
     @post.save
     render :nothing => true

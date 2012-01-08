@@ -8,7 +8,10 @@ Huddlers::Application.routes.draw do
   get "huddlers_card/trophy_room"
   match "/posts/index" => "posts#index"
   match "/create_post" => "posts#create"
-  #match "profile/:id"  => ""
+  match "/create_comment" => "comments#create"
+	match "/create_fan" => "fans#create"
+
+	#match "profile/:id"  => ""
   resources :pictures
 	resources :posts
   resources :huddlers_card
