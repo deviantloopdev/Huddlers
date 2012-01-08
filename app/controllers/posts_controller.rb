@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
   	@post = Post.all
-		respond_with @post
+		
 	end
 
   def flash
