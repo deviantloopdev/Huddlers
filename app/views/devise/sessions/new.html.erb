@@ -145,6 +145,53 @@
 		}
 	}
 </script> 
+<script>
+	function currentYPosition() {
+	    // Firefox, Chrome, Opera, Safari
+	    if (self.pageYOffset) return self.pageYOffset;
+	    // Internet Explorer 6 - standards mode
+	    if (document.documentElement && document.documentElement.scrollTop)
+	        return document.documentElement.scrollTop;
+	    // Internet Explorer 6, 7 and 8
+	    if (document.body.scrollTop) return document.body.scrollTop;
+	    return 0;
+	}
+	
+	function elmYPosition(eID) {
+	    var elm = document.getElementById(eID);
+	    var y = elm.offsetTop;
+	    var node = elm;
+	    while (node.offsetParent && node.offsetParent != document.body) {
+	        node = node.offsetParent;
+	        y += node.offsetTop;
+	    } return y;
+	}
+	
+	function smoothScroll(eID) {
+	    var startY = currentYPosition();
+	    var stopY = elmYPosition(eID);
+	    var distance = stopY > startY ? stopY - startY : startY - stopY;
+	    if (distance < 100) {
+	        scrollTo(0, stopY); return;
+	    }
+	    var speed = Math.round(distance / 40);
+	    if (speed >= 20) speed = 20;
+	    var step = Math.round(distance / 25);
+	    var leapY = stopY > startY ? startY + step : startY - step;
+	    var timer = 0;
+	    if (stopY > startY) {
+	        for ( var i=startY; i<stopY; i+=step ) {
+	            setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+	            leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+	        } return;
+	    }
+	    for ( var i=startY; i>stopY; i-=step ) {
+	        setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+	        leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+	    }
+	}
+</script>
+
 <div id="homeContainer" style="width:100%; height:100%; background-color:white; position:absolute; z-index:-1000;"></div>
 <div id="homeBackground"><img src="/assets/bg1.png" width="100%" height="400" style="min-width:1088px;"></div>
 <div id="outerContainer" style="height:100%;">
@@ -247,7 +294,7 @@
 			<div id="footerNavContainer">
 				<ul id="footerNav"  style="display: table;">
 					<li style=""><div style="display:inline; margin-right:60px;" onmouseup="SignUpClick()"; onmousedown="SignUpClick()"; onmouseover="SignUpHover()"; onmouseout="SignUpHover()";><a href="#"><img src="/assets/signup2.png" id="Symbol1" name="Symbol1" /></a></div></li>
-					<li><a href="#aboutOuterContainer">About</a></li>
+					<li><a href="#aboutOuterContainer" onmouseup="smoothScroll('aboutOuterContainer'); return false">About</a></li>
 					<li><a href="#">Find Teammates</a></li>
 					<li><a href="#">Join the Team</a></li>
 					<li><a href="#">Testimonials</a></li>
@@ -260,6 +307,7 @@
 </div>
 
 <div id="aboutOuterContainer" style="height:100%;">
+	<a name="about" id="about"></a>
 	ABOUT US SECTION!!!
-	<p><a href="#outerContainer">Back to Home</a></p>
+	<p><a href="#outerContainer" onmouseup="smoothScroll('outerContainer'); return false">Back to Home</a></p>
 </div>
