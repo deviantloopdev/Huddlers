@@ -1,8 +1,8 @@
-//functions that we will call in huddlers card
+//functions that we will call in huddlers cardZZ
 
 function message(){
 	alert("message");
-	
+
 }
 
 function friend_request(){
@@ -46,8 +46,19 @@ function close_request(){
         });	
 }
 
-function publish(){
-	
+function save_shoutout(){
+	var shoutout = $('#shoutout_textarea').val();
+	$.ajax({
+		url: "/create_post",
+		type: "POST",
+		data: {testy: shoutout},
+	success:function(data){
+		alert('success');
+	},
+	error:function(data){
+		alert('error');
+	}	
+	});
 }
 
 function shoutout_update(event){

@@ -6,7 +6,8 @@ Huddlers::Application.routes.draw do
   get "huddlers_card/card"
 
   get "huddlers_card/trophy_room"
-
+  
+  match "/create_post" => "posts#create"
   
   resources :pictures
 
