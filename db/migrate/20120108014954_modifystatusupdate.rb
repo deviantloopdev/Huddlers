@@ -1,6 +1,6 @@
 class Modifystatusupdate < ActiveRecord::Migration
   def up
-    remove_column :posts, :status_update?
+    remove_column :posts, :status_update
   end
 
   def down

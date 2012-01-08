@@ -6,7 +6,6 @@ class AddColumnsComments < ActiveRecord::Migration
 #user_id of person who made it
 #element_id of post it belongs to
 #profile_id
-		add_column :comments, :body, :text
 		add_column :comments, :type_of, :string
 		add_column :comments, :creator_id, :integer
 		add_column :comments, :element_id, :integer
@@ -14,5 +13,9 @@ class AddColumnsComments < ActiveRecord::Migration
 	end
 
   def down
+    remove_column :comments, :type_of, :string
+    remove_column :comments, :creator_id, :integer
+    remove_column :comments, :element_id, :integer
+    remove_column :comments, :profile_id, :integer
   end
 end
