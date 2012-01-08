@@ -108,13 +108,13 @@ var tggle='off'
 			</div>
 		</div>
 	</div>
-<!--<%= yield %>-->
-<!--	<div style="display:none;" id="user_nav">
+
+<!--	<div style="display:none;" id="user_nav"> -->
 	  <% if user_signed_in? %>
 	    Signed in as <%= current_user.email %>. Not you?
 	    <%= link_to "Sign Out", destroy_user_session_path %>
 	  <% end %>
-	</div>-->
+<!--	</div> -->
 	<%= yield %>
 <% else %>
 	<%= yield %>

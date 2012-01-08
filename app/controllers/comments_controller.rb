@@ -5,7 +5,9 @@ class CommentsController < ApplicationController
 	end
 
 	def create
-		@comment = Comment.new()
+		@comment = Comment.new(
+		:body => params[:comment_body]
+		)
 		@comment.save
 	end
 

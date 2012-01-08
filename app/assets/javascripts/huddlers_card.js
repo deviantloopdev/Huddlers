@@ -51,24 +51,63 @@ function save_shoutout(){
 	$.ajax({
 		url: "/create_post",
 		type: "POST",
-		data: {testy: shoutout},
+		data: {texty: shoutout},
 	success:function(data){
-		alert('success');
+		//alert('success');
 	},
 	error:function(data){
-		alert('error');
+		//alert('error');
 	}	
 	});
+}
+
+function add_comment(id){
+	var str1 = $('#post_'+id).val();
+	var str2 = '<div style="margin-top:5px;margin-bottom:5px;margin-left:50px;"id="comments">';
+	var str3 = '<input type="text" /><button onclick="">Post</button><button style="margin-left:20px;" onclick="">Close</button>';
+  var str4 = '</div>';
+	$('#post_'+id).html(str2 + str3 + str4);
+}
+
+function save_comment(){
+  /* var comment = $('#comment_textarea').val();
+   $.ajax({
+     url: "/create_comment",
+     type: "POST",
+     data: {comment: comment},
+    success:function(data){
+     //alert('success');
+   },
+   error:function(data){
+     //alert('error');
+   }
+   });*/
+}
+
+function add_fan(){
+}
+
+function save_fan(){
+   $.ajax({
+     url: "/create_fan",
+     type: "POST",
+     data: {texty: shoutout},
+   success:function(data){
+    //alert('success');
+   },
+   error:function(data){
+    //alert('error');
+  }
+  });
 }
 
 function shoutout_update(event){
         hash = event.timeStamp;
         hash = hash.toString();
-        var prev_html = $("#wall").html();
+        var prev_html = $("#real_wall").html();
         str0 = prev_html;
         str1 = '<div id="new'+hash+'">'+$("#shoutout_textarea").val()+'</div>';
         str2 = '<hr/>';
         str3 = '<a href="#">Like</a><a style="margin-left:10px;" href="#">Comment</a>';
-        $('#wall').html(str0 + str1 + str3 + str2);
-
+        $('#real_wall').html(str1 + str3 + str2 + str0);
 }

@@ -4,7 +4,6 @@ class HuddlersCardController < ApplicationController
   def card
     render :layout => 'application.html.erb' 
 		@post = Post.all
-		
 	end
 
 end
