@@ -11,9 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120108015346) do
+ActiveRecord::Schema.define(:version => 20120108145254) do
 
   create_table "comments", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "body"
+    t.string   "type_of"
+    t.integer  "creator_id"
+    t.integer  "element_id"
+    t.integer  "profile_id"
+  end
+
+  create_table "fans", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "type_of_content"
+    t.integer  "creator_id"
+    t.integer  "element_id"
+    t.integer  "profile_id"
+  end
+
+  create_table "huddlers_cards", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

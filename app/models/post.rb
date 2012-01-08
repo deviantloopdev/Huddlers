@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  has_many :comments #, :fans
+  has_many :comments# , :fans
 
   #To make sure that it is not an empty post
   validates_presence_of :body

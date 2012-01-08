@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
 <%= stylesheet_link_tag "huddlers_card.css" %>
 <%= javascript_include_tag "huddlers_card.js" %>
-
+<%= #render "/posts/index"  %>
 </head>
 
 
@@ -44,10 +44,10 @@
 		<center><img src="/assets/rails.png" width="175px" height="175px"></center>
 		<br />
 		<br />
-		Height: <%= current_user.height_ft %>' <%= current_user.height_in %>"<br />
+					Height: <%= current_user.height_ft %>' <%= current_user.height_in %>"<br />
         	Weight: <%= current_user.weight %><br />
-        	Age: <%= current_user.age %><br />
-        	City: <%= current_user.city %>
+        	Age: 		<%= current_user.age %><br />
+        	City: 	<%= current_user.city %>
 		<br />
 		<br />
 		<br />
@@ -103,7 +103,9 @@
 		<br />
 		</div>
 		<div id="wall">
-		
+    	<% @post.each do |post|  %>
+				<h3><%= post.body %></h3>
+			<% end %>	
 		</div>
 	</div>
 </div>

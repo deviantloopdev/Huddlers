@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
                   :height_ft, :height_in, :weight, :age, :city
   
   validates_presence_of :first_name, :last_name
-  
+  has_one :huddlers_card
   has_many :pictures
 end

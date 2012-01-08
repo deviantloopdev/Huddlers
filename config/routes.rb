@@ -4,13 +4,13 @@ Huddlers::Application.routes.draw do
 
   get "newsfeed/index"
   get "huddlers_card/card"
-
+	
   get "huddlers_card/trophy_room"
-  
+  match "/posts/index" => "posts#index"
   match "/create_post" => "posts#create"
-  
+  #match "profile/:id"  => ""
   resources :pictures
-
+	resources :posts
 
   root :to => "newsfeed#index"
   # The priority is based upon order of creation:
