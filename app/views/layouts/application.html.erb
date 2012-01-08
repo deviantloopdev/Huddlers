@@ -26,6 +26,30 @@
 	}
 </style>
 
+<script>
+var tggle='off'
+	
+	function DownHover(){ 
+		if (tggle=='on'){ 
+			document.Symbol3.src="/assets/down.png" 
+			tggle='off'
+		} else { 
+			document.Symbol3.src="/assets/down_h.png" 
+			tggle='on'
+		} 
+	}
+	
+	function DownClick(){
+		if (tggle=='off'){ 
+			document.Symbol3.src="/assets/down_h.png" 
+			tggle='on'
+		} else { 
+			document.Symbol3.src="/assets/down_a.png" 
+			tggle='off'
+		}
+	}
+</script>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,14 +84,14 @@
 							<%= form_tag("/search", :method => "get") do %>
 							<%= label_tag(:q, "") %>
 							<%= text_field_tag(:q) %>
-							<%= image_submit_tag("/assets/btn_search.png", :class => "submit_tag") %>
+							<%= image_submit_tag("/assets/search.png", :class => "submit_tag") %>
 							<% end %>
 						</div>
 						<div id="userNavContainer" style="float:right; color: #9DC975; font-size:12px; z-index:4;">
 							<ul id="navlist" style="display: table;">
-								<a href="#" style="text-decoration: none;"><li id="active"><img src="/assets/profile.png" height="30" width="30" /></li>
+								<a href="#" style="text-decoration: none;"><li id="active"><img src="/assets/profile.png" height="30" width="30" style="border-radius:3px;" /></li>
 								<li style="color:#9DC975;"><%= current_user.first_name %> <%= current_user.last_name %></li></a>
-								<li><a href="#"><img src="/assets/btn_dropdown.png" height="15" width="15"/ ></a></li>
+								<li><div style="display:inline;" onmouseup="DownClick()"; onmousedown="DownClick()"; onmouseover="DownHover()"; onmouseout="DownHover()";><a href="#"><img src="/assets/down.png" id="Symbol3" name="Symbol3" /></a></div></li>
 							</ul>
 						</div>
 					</div>					
