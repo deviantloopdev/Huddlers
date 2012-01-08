@@ -11,6 +11,7 @@ Huddlers::Application.routes.draw do
   #match "profile/:id"  => ""
   resources :pictures
 	resources :posts
+  resources :huddlers_card
 
   root :to => "newsfeed#index"
   # The priority is based upon order of creation:
