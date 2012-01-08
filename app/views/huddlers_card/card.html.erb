@@ -15,7 +15,7 @@
 		<div class="close">x</div>
 		Friend: <div class="clearfix"><input class="span4" id="" name="" type="text" placeholder="" /></div>
 		This is the lightbox!!!
-		<div class="input">
+								<div class="input">
               		<textarea class="xlarge" id="textarea2" name="textarea2" rows="3"></textarea>
               		<span class="help-block">
                 	Block of help text to describe the field above if need be.
@@ -25,11 +25,11 @@
 		<a href="#" onclick="close_msg_box()"class="btn large">Cancel</a>
 	</div>
 	<div class="request_box">
- 	<br />
- 	<br />
+ 		<br />
+ 		<br />
         	<center><a href="#" class="btn large primary">Send Friend Request?</a>
         	<a href="#" onclick="close_request()"class="btn large">Cancel</a><center>
-</div>
+	</div>
 <h1>My Huddlers Card</h1>
 <div class="row">
 	<br />
@@ -98,20 +98,23 @@
                         	<!-- <span class="help-block">
                         		<a href="#">Like</a><a style="margin-left:10px;" href="#">Comment</a>
                         	</span> -->
-                	</div>
+      </div>
                 <button onclick="shoutout_update(event); save_shoutout(); ">POST</button>	
-		<br />
-		<br />
+								<br />
+								<br />
 		</div>
-		<div id="wall">
-    	<% @post.each do |post|  %>
-				<h3><%= post.body %></h3>
+		<div id="real_wall">
+    	<% for post in Post.all  %>
+			 	<div id="posts"><%= post.body%></div>
+ 				<hr/>
+				<a href="#">Like</a><a style="margin-left:10px;" href="#">Comment</a>
 			<% end %>	
 		</div>
 	</div>
 </div>
 <br />
 <br />
+</div>
 </div>
 </body>
 
