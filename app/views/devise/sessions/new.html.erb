@@ -28,7 +28,7 @@
 		vertical-align: middle;
 		height:32px;
 		padding-right: 55px;
-		padding-top: 10px;
+		padding-top: 7px;
 	}
 	
 	#homeBackground
@@ -237,7 +237,7 @@
 				  <%= devise_error_messages! %>
 				  <table style="font-size:13px;">
 				  	  <tr>
-					  <td><%= f.label :email, :class => "form_label" %>: </td>
+					  <td><%= f.label :email, :class => "form_label", :value => "email.." %>: </td>
 					  <td><%= f.email_field :email, :class => "form_field" %></td>
 					  </tr>
 					  <tr>
@@ -304,7 +304,7 @@
 					<li><a href="#aboutOuterContainer" onmouseup="smoothScroll('aboutOuterContainer'); return false">About</a></li>
 					<li><a href="#teamOuterContainer" onmouseup="smoothScroll('teamOuterContainer'); return false">Find Teammates</a></li>
 					<li><a href="#">Join the Team</a></li>
-					<li><a href="#">Testimonials</a></li>
+					<li><a href="http://blog.huddlers.com/" target="_blank">Blog</a></li>
 					<li><a href="#">Terms and Conditions</a></li>
 					<li style="margin-right:30px;"><div style="display:inline;" onmouseup="TwitterClick()"; onmousedown="TwitterClick()"; onmouseover="TwitterHover()"; onmouseout="TwitterHover()";><a href="https://twitter.com/wearehuddlers" target="_blank"><img src="/assets/twitter.png" id="Symbol2" name="Symbol2" /></a></div></li>
 				</ul>
