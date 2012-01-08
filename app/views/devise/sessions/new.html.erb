@@ -23,8 +23,12 @@
 	#footerNav li
 	{
 		display: inline;
+		display: table-cell;
 		list-style-type: none;
-		padding-right: 50px;
+		vertical-align: middle;
+		height:32px;
+		padding-right: 55px;
+		padding-top: 10px;
 	}
 	
 	#pageBackground
@@ -77,10 +81,56 @@
 		background-image: url("/assets/login_a.png");
 		cursor: pointer;
 	}
+	
 </style>
+
+<script>
+	var tggle='off'
+	
+	function SignUpHover(){ 
+		if (tggle=='on'){ 
+			document.dropdownSymbol1.src="/assets/signup2.png" 
+			tggle='off'
+		} else { 
+			document.dropdownSymbol1.src="/assets/signup2_h.png" 
+			tggle='on'
+		} 
+	}
+	
+	function SignUpClick(){
+		if (tggle=='off'){ 
+			document.dropdownSymbol1.src="/assets/signup2_h.png" 
+			tggle='on'
+		} else { 
+			document.dropdownSymbol1.src="/assets/signup2_a.png" 
+			tggle='off'
+		}
+	}
+	
+	function TwitterHover(){ 
+		if (tggle=='on'){ 
+			document.dropdownSymbol2.src="/assets/twitter.png" 
+			tggle='off'
+		} else { 
+			document.dropdownSymbol2.src="/assets/twitter_h.png" 
+			tggle='on'
+		} 
+	}
+	
+	function TwitterClick(){
+		if (tggle=='off'){ 
+			document.dropdownSymbol2.src="/assets/twitter_h.png" 
+			tggle='on'
+		} else { 
+			document.dropdownSymbol2.src="/assets/twitter_a.png" 
+			tggle='off'
+		}
+	}
+</script> 
+
 <div id="pageBackground"><img src="/assets/bg1.png" width="100%" height="400"></div>
-<div id="contentContainer" style="height:400px;">
-	<div id="container" style="height:50px; background-image: linear-gradient(bottom, #002100 1%, #003400 51%);
+<div id="contentContainer" style="height:430px;">
+	<div id="container" style="height:80px; background-image: linear-gradient(bottom, #002100 1%, #003400 51%);
 								background-image: -o-linear-gradient(bottom, #002100 1%, #003400 51%);
 								background-image: -moz-linear-gradient(bottom, #002100 1%, #003400 51%);
 								background-image: -webkit-linear-gradient(bottom, #002100 1%, #003400 51%);
@@ -93,11 +143,11 @@
 									color-stop(0.51, #003400));" >
 		<div id="greenBar">
 				<div id="loggedInMenubar" style="width:1088px; min-width:980px; margin:0 auto;">
-					<div id="logoContainer" style="width:187px; padding-left: 30px; padding-top:12px; z-index:5; float:left;">
+					<div id="logoContainer" style="width:187px; padding-left: 30px; padding-top:42px; z-index:5; float:left;">
 						<img src="/assets/Huddlers_Logo.png" style="height:25px;"/>
 					</div>
 					<div id="headNav" style="float:right; z-index:4;">
-						<div id="loginForm" class="search" style="float:left; padding-top:10px; color:#9DC975; vertical-align:top; font-size:13px;">
+						<div id="loginForm" class="search" style="float:left; padding-top:40px; color:#9DC975; vertical-align:top; font-size:13px;">
 							<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 	  						<div><%= f.label :email, :class => "logIn_label" %>: <%= f.email_field :email, :class => "form_field" %>
 	  						<%= f.label :password, :class => "logIn_label" %>: <%= f.password_field :password, :class => "form_field" %>
@@ -108,8 +158,7 @@
 				</div>
 		</div>
 		<div id="signUpPage" style="width:1088px; min-width:980px; margin:0 auto;">
-			<div id="signUpForm" style="padding-right:240px; float:right;">
-				<%= render :partial => "devise/shared/links" %>
+			<div id="signUpForm" style="padding-right:298px; float:right;">
 				<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 				  <%= devise_error_messages! %>
 				  <table style="font-size:13px;">
@@ -136,6 +185,10 @@
 					  <tr>
 					  <td></td>
 					  <td><%= f.submit "", :class=>"signUpButton" %></td>
+					  </tr>
+					  <tr>
+					  <td></td>
+					  <td><%= render :partial => "devise/shared/links" %></td>
 					  </tr>
 				  </table>
 				<% end %>
@@ -176,13 +229,14 @@
 									);" >
 		<div id="footerBar" style="width:1088px; min-width:980px; margin:0 auto;>
 			<div id="footerNavContainer">
-				<ul id="footerNav" style="margin:0;">
-					<li style="margin-right:80px;"><a href="#">Sign Up</a></li>
+				<ul id="footerNav"  style="display: table;">
+					<li style=""><div style="display:inline; margin-right:60px;" onmouseup="SignUpClick();" ; onmousedown="SignUpClick()"; onmouseover="SignUpHover();" onmouseout="SignUpHover()";><a href="#"><img src="/assets/signup2.png" id="dropdownSymbol1" name="dropdownSymbol1" /></a><div></li>
 					<li><a href="#">About</a></li>
 					<li><a href="#">Find Teammates</a></li>
 					<li><a href="#">Join the Team</a></li>
 					<li><a href="#">Testimonials</a></li>
 					<li><a href="#">Terms and Conditions</a></li>
+					<li style="margin-right:30px;"><div style="display:inline;" onmouseup="TwitterClick();" ; onmousedown="TwitterClick()"; onmouseover="TwitterHover();" onmouseout="TwitterHover()";><a href="https://twitter.com/wearehuddlers" target="_blank"><img src="/assets/twitter.png" id="dropdownSymbol2" name="dropdownSymbol2" /></a><div></li>
 				</ul>
 			</div>
 		</div>
