@@ -20,6 +20,26 @@
 		color:#002100;
 	}
 	
+	.contact_form_field
+	{
+		height: 30px;
+		width: 271px;
+		border-radius: 5px;
+		outline: none;
+		padding-left: 8px;	
+		margin-bottom: 10px;
+	}
+	
+	.contact_msg_field
+	{
+		width: 271px;
+		border: 1px solid #C4C4C4;
+		border-radius: 5px;
+		outline: none;
+		padding-left: 8px;	
+		margin-bottom: 10px;
+	}
+	
 	#footerNav li
 	{
 		display: inline;
@@ -27,7 +47,7 @@
 		list-style-type: none;
 		vertical-align: middle;
 		height:32px;
-		padding-right: 55px;
+		padding-right: 50px;
 		padding-top: 7px;
 	}
 	
@@ -40,6 +60,13 @@
 	}
 	
 	#aboutBackground
+	{
+		position: absolute;
+		z-index: -10;
+		width: 100%;
+	}
+	
+	#teamBackground
 	{
 		position: absolute;
 		z-index: -10;
@@ -151,6 +178,26 @@
 			tggle='off'
 		}
 	}
+	
+	function ContactSubmitHover(){ 
+		if (tggle=='on'){ 
+			document.Symbol4.src="/assets/submit.png" 
+			tggle='off'
+		} else { 
+			document.Symbol4.src="/assets/submit_h.png" 
+			tggle='on'
+		} 
+	}
+	
+	function ContactSubmitClick(){
+		if (tggle=='off'){ 
+			document.Symbol4.src="/assets/submit_h.png" 
+			tggle='on'
+		} else { 
+			document.Symbol4.src="/assets/submit_a.png" 
+			tggle='off'
+		}
+	}
 </script> 
 <script>
 	function currentYPosition() {
@@ -201,7 +248,7 @@
 
 <div class="homeContainer" style="width:100%; height:100%; background-color:white; position:absolute; z-index:-1000;"></div>
 <div id="homeBackground"><img src="/assets/bg1.png" width="100%"></div>
-<div id="outerContainer" style="height:100%;">
+<div id="outerContainer" style="height:700px;">
 <div id="contentContainer" style="height:430px;">
 	<div id="container" style="height:80px; background-image: linear-gradient(bottom, #002100 1%, #003400 51%);
 								background-image: -o-linear-gradient(bottom, #002100 1%, #003400 51%);
@@ -237,7 +284,7 @@
 				  <%= devise_error_messages! %>
 				  <table style="font-size:13px;">
 				  	  <tr>
-					  <td><%= f.label :email, :class => "form_label", :value => "email.." %>: </td>
+					  <td><%= f.label :email, :class => "form_label" %>: </td>
 					  <td><%= f.email_field :email, :class => "form_field" %></td>
 					  </tr>
 					  <tr>
@@ -300,12 +347,13 @@
 		<div id="footerBar" style="width:1088px; min-width:980px; margin:0 auto;>
 			<div id="footerNavContainer">
 				<ul id="footerNav"  style="display: table;">
-					<li style=""><div style="display:inline; margin-right:60px;" onmouseup="SignUpClick()"; onmousedown="SignUpClick()"; onmouseover="SignUpHover()"; onmouseout="SignUpHover()";><a href="#"><img src="/assets/signup2.png" id="Symbol1" name="Symbol1" /></a></div></li>
-					<li><a href="#aboutOuterContainer" onmouseup="smoothScroll('aboutOuterContainer'); return false">About</a></li>
-					<li><a href="#teamOuterContainer" onmouseup="smoothScroll('teamOuterContainer'); return false">Find Teammates</a></li>
-					<li><a href="#">Join the Team</a></li>
+					<li><div style="display:inline; margin-right:50px;" onmouseup="SignUpClick()"; onmousedown="SignUpClick()"; onmouseover="SignUpHover()"; onmouseout="SignUpHover()";><a href="#"><img src="/assets/signup2.png" id="Symbol1" name="Symbol1" /></a></div></li>
+					<li><a href="#aboutHook" onmouseup="smoothScroll('aboutHook'); return false">About</a></li>
+					<li><a href="#teamHook" onmouseup="smoothScroll('teamHook'); return false">Find Teammates</a></li>
+					<li><a href="#joinHook" onmouseup="smoothScroll('joinHook'); return false">Join the Team</a></li>
+					<li><a href="#">Testimonials</a></li>
 					<li><a href="http://blog.huddlers.com/" target="_blank">Blog</a></li>
-					<li><a href="#">Terms and Conditions</a></li>
+					<li><a href="#termsHook" onmouseup="smoothScroll('termsHook'); return false">Terms and Conditions</a></li>
 					<li style="margin-right:30px;"><div style="display:inline;" onmouseup="TwitterClick()"; onmousedown="TwitterClick()"; onmouseover="TwitterHover()"; onmouseout="TwitterHover()";><a href="https://twitter.com/wearehuddlers" target="_blank"><img src="/assets/twitter.png" id="Symbol2" name="Symbol2" /></a></div></li>
 				</ul>
 			</div>
@@ -313,12 +361,82 @@
 </div>
 </div>
 
-<div class="homeContainer" style="width:100%; height:100%; background-color:white; position:absolute; z-index:-1000;"></div>
+<div class="homeContainer" style="width:100%; height:700px; background-color:white; position:absolute; z-index:-1000;"></div>
 <div id="aboutBackground"><img src="/assets/bg2.png" width="100%" /></div>
-<div id="aboutOuterContainer" style="width:1088px; min-width:980px; margin:0 auto;">
-	<div id="homeHook" style="width:400px; padding-left:30px; padding-top:15px;">
-		<div id="sloganContainer" style="height:200px; display:table;">
-			<div id="slogan" style="vertical-align:middle; display:table-cell; font-size:18px;">
+<div id="OuterContainer" style="height:700px; width:1088px; min-width:980px; margin:0 auto;">
+	<div id="aboutHook" style="width:500px; padding-left:30px; padding-top:15px;">
+		<div id="aboutContainer" style="height:100px; display:table;">
+			<div id="about" style="vertical-align:middle; display:table-cell; font-size:18px;">
+				About
+			</div>
+		</div>
+		<div id="listContainer">
+			<ul id="homeList">
+				<li>Huddlers.com is a social network for the Everyday Athlete - Like you</li>
+				<li>Develop your athletic network and connect with similar athletes</li>
+				<li>Create an online athletic identity and share your sports</li>
+			</ul>
+		</div>
+	</div>	
+	ABOUT US SECTION!!!
+	<p><a href="#outerContainer" onmouseup="smoothScroll('outerContainer'); return false">Back to Home</a></p>
+	
+	<div id="teamHook" style="width:400px; padding-left:30px; padding-top:15px;">
+		<div id="teamContainer" style="height:100px; display:table;">
+			<div id="team" style="vertical-align:middle; display:table-cell; font-size:18px;">
+				Find Teammates
+			</div>
+		</div>
+		<div id="listContainer">
+			<ul id="homeList">
+				<li>Create your card</li>
+				<li>Share your athletic activity and achievements</li>
+				<li>Become a better athlete</li>
+			</ul>
+		</div>
+	</div>	
+	FIND TEAMMATES SECTION!!!
+	<p><a href="#outerContainer" onmouseup="smoothScroll('outerContainer'); return false">Back to Home</a></p>
+</div>
+
+<div class="homeContainer" style="width:100%; height:700px; background-color:white; position:absolute; z-index:-1000;"></div>
+<div id="aboutBackground"><img src="/assets/bg3.png" width="100%" /></div>
+<div id="OuterContainer" style="height:800px; width:1088px; min-width:980px; margin:0 auto;">
+	<div id="joinContainer" style="height:400px;">
+		<div style="width:508px; min-width:400px; padding-top:15px; float:right;">
+			<div id="contactContainer" style="height:100px; display:table;">
+				<div id="contact" style="vertical-align:middle; display:table-cell; font-size:18px;">
+					Contact
+				</div>
+			</div>
+			<div id="contactForm">
+				<input class="contact_form_field" id="contact_email" size="30" type="email" placeholder="email.."><br/>
+				<input class="contact_form_field" id="contact_email" size="30" type="name" placeholder="full name.."><br/>
+				<textarea class="contact_msg_field" id="contact_description" rows="6" placeholder="message.." style="font-family:Arial;"></textarea><br/>
+				<div style="display:inline; margin-right:50px;" onmouseup="ContactSubmitClick()"; onmousedown="ContactSubmitClick()"; onmouseover="ContactSubmitHover()"; onmouseout="ContactSubmitHover()";>
+					<a href="#"><img src="/assets/submit.png" id="Symbol4" name="Symbol4" /></a>
+				</div>
+			</div>
+		</div>
+		<div id="joinHook" style="width:500px; padding-left:30px; padding-top:15px;">
+			<div id="joinContainer" style="height:100px; display:table;">
+				<div id="join" style="vertical-align:middle; display:table-cell; font-size:18px;">
+					Join the Team
+				</div>
+			</div>
+			<div id="listContainer">
+				<ul id="homeList">
+					<li>We're always looking to meet talented people with a passion for sports</li>
+					<li>Send us an email to hear more about us</li>
+				</ul>
+			</div>
+		</div>	
+		JOIN THE TEAM SECTION!!!
+		<p><a href="#outerContainer" onmouseup="smoothScroll('outerContainer'); return false">Back to Home</a></p>
+	</div>
+	<div id="termsHook" style="width:400px; padding-left:30px; padding-top:15px;">
+		<div id="termsContainer" style="height:100px; display:table;">
+			<div id="terms" style="vertical-align:middle; display:table-cell; font-size:18px;">
 				CONNECTING ATHLETES LIKE <b>US</b>
 			</div>
 		</div>
@@ -330,7 +448,6 @@
 			</ul>
 		</div>
 	</div>	
-	<a name="about" id="about"></a>
-	ABOUT US SECTION!!!
+	JOIN THE TEAM SECTION!!!
 	<p><a href="#outerContainer" onmouseup="smoothScroll('outerContainer'); return false">Back to Home</a></p>
 </div>
