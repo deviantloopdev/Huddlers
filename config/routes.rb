@@ -3,8 +3,8 @@ Huddlers::Application.routes.draw do
   devise_for :users
 
   get "newsfeed/index"
-  get "huddlers_card/card"
-	
+  match "card/:id" => "huddlers_card#card"
+   
   get "huddlers_card/trophy_room"
   match "/posts/index" => "posts#index"
   match "/create_post" => "posts#create"

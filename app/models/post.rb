@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   
   #Find out where the post is being made ie in a group/friend/status_update
   belongs_to :user
-  has_one :user
+
   
   #if user and recipient are the same then it is a status update
   attr_accessible :body, :user, :recipient

@@ -95,11 +95,8 @@
 		<div id="shoutout_input" class="column-content" >
 			<div style="display:block; margin-left:auto; margin-right:auto;" class="input">
                         <textarea style=""class="xlarge" id="shoutout_textarea" name="textarea2" rows="3"></textarea>
-                        	<!-- <span class="help-block">
-                        		<a href="#">Like</a><a style="margin-left:10px;" href="#">Comment</a>
-                        	</span> -->
       </div>
-                <button onclick="shoutout_update(event); save_shoutout(); ">POST</button>	
+                <button onclick="shoutout_update(event, <%= Time.now %>); save_shoutout(); ">POST</button>	
 								<br />
 								<br />
 		</div>
@@ -108,25 +105,25 @@
 				<% post = Post.all %>
 				<%= post.length %>
 				<% for post in Post.all%>
-					<%= post = %>
 				<% end %>
     		<% for post in Post.all  %>
-<<<<<<< HEAD
-					<hr />
-			 		<div style="margin-left:0px;margin-bottom:8px; margin-top:8px;"id="post_<%= post.id + 356%>"><%= post.body%></div>
-					<a href="#" onclick="add_fan();save_fan();">Fan</a><a style="margin-bottom:90px; margin-left:10px;" onclick="add_comment(<%= post.id + 356%>);save_comment();"href="#">Comment</a>
-				<% end %>	
-=======
-				<hr />
-			 	<div style="margin-left:0px;margin-bottom:8px; margin-top:8px;"id="post_<%= post.id + 356%>"><%= post.body%></div>
-				<a href="#" onclick="add_fan();save_fan();">Fan</a><a style="margin-bottom:90px; margin-left:10px;" onclick="add_comment(<%= post.id + 356%>);save_comment();"href="#">Comment</a>
-			<% end %>
->>>>>>> a846e5b0e25fc0148bf2297e3470cd70156a76fb
-			<div style="display:none;margin-top:5px;margin-bottom:5px;margin-left:50px;"id="comments">
-				<input type="text" /><button onclick="">Post</button><button style="margin-left:20px;" onclick="">Close</button>
-			</div>
+				    
+			 	  <div style="margin-left:0px;margin-bottom:8px; margin-top:8px;"id="post_<%= post.id + 356%>">
+            <%= post.body %>
+            <div id="">
+            <a href="#" onclick="add_fan();save_fan();">Fan</a><a style="margin-bottom:90px; margin-left:10px;" onclick="open_comment(<%= post.id + 356%>);"href="#">Comment</a>
+			      </div>
+            </div >
+            <div id="comments_postid_<%= post.id + 356%>">
+            
+            </div>
+            <div style="display:none;" id="new_comment_postid<%= post.id + 356%>">
+              <div style="margin-top:5px;margin-bottom:5px;margin-left:50px;" id="">      
+                <input id="comment_<%= post.id + 356 %>"type="text" /><button onclick="add_comment(<%= post.id + 356%>);">Post</button><button style="margin-left:20px;" onclick="">Close</button>
+              </div> 
+            </div>
+        <% end %>	
 		</div>
-	</div>
 </div>
 <br />
 <br />

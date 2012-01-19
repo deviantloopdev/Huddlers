@@ -14,24 +14,18 @@
 ActiveRecord::Schema.define(:version => 20120108145254) do
 
   create_table "comments", :force => true do |t|
-    t.integer  "post_id"
-    t.integer  "picture_id"
-    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "body"
     t.string   "type_of"
-    t.integer  "creator_id"
-    t.integer  "element_id"
-    t.integer  "profile_id"
+    t.integer  "post_id"
   end
 
   create_table "fans", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type_of_content"
-    t.integer  "creator_id"
-    t.integer  "element_id"
-    t.integer  "profile_id"
+    t.integer  "post_id"
   end
 
   create_table "huddlers_cards", :force => true do |t|
@@ -40,7 +34,6 @@ ActiveRecord::Schema.define(:version => 20120108145254) do
   end
 
   create_table "pictures", :force => true do |t|
-    t.integer  "user_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -48,14 +41,12 @@ ActiveRecord::Schema.define(:version => 20120108145254) do
   end
 
   create_table "posts", :force => true do |t|
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "body"
-    t.integer  "author_id"
-    t.integer  "recipient_id"
     t.boolean  "friend_vs_group"
     t.boolean  "status_update"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
