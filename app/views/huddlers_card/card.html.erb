@@ -105,11 +105,23 @@
 		</div>
 
 		<div id="real_wall">
+				<% post = Post.all %>
+				<%= post.length %>
+				<% for post in Post.all%>
+					<%= post = %>
+				<% end %>
     		<% for post in Post.all  %>
+<<<<<<< HEAD
+					<hr />
+			 		<div style="margin-left:0px;margin-bottom:8px; margin-top:8px;"id="post_<%= post.id + 356%>"><%= post.body%></div>
+					<a href="#" onclick="add_fan();save_fan();">Fan</a><a style="margin-bottom:90px; margin-left:10px;" onclick="add_comment(<%= post.id + 356%>);save_comment();"href="#">Comment</a>
+				<% end %>	
+=======
 				<hr />
 			 	<div style="margin-left:0px;margin-bottom:8px; margin-top:8px;"id="post_<%= post.id + 356%>"><%= post.body%></div>
 				<a href="#" onclick="add_fan();save_fan();">Fan</a><a style="margin-bottom:90px; margin-left:10px;" onclick="add_comment(<%= post.id + 356%>);save_comment();"href="#">Comment</a>
 			<% end %>
+>>>>>>> a846e5b0e25fc0148bf2297e3470cd70156a76fb
 			<div style="display:none;margin-top:5px;margin-bottom:5px;margin-left:50px;"id="comments">
 				<input type="text" /><button onclick="">Post</button><button style="margin-left:20px;" onclick="">Close</button>
 			</div>
