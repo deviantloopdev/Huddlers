@@ -87,11 +87,11 @@ var tggle='off'
 							<%= image_submit_tag("/assets/search.png", :class => "submit_tag") %>
 							<% end %>
 						</div>
-						<div id="userNavContainer" style="float:right; color: #9DC975; font-size:12px; z-index:4;">
+						<div id="userNavContainer" style="float:right; color: #9DC975; font-size:12px; z-index:4; padding-top:5px;">
 							<ul id="navlist" style="display: table;">
-								<a href="#" style="text-decoration: none;"><li id="active"><img src="/assets/profile.png" height="30" width="30" style="border-radius:3px;" /></li>
-								<li style="color:#9DC975;"><%= current_user.first_name %> <%= current_user.last_name %></li></a>
-								<li><div style="display:inline;" onmouseup="DownClick()"; onmousedown="DownClick()"; onmouseover="DownHover()"; onmouseout="DownHover()";><a href="#"><img src="/assets/down.png" id="Symbol3" name="Symbol3" /></a></div></li>
+								<a href="#" style="text-decoration: none;"><li style="color:#9DC975; padding-top:12px;"><%= current_user.first_name %> <%= current_user.last_name %></li>
+									<li id="active"><img src="/assets/profile.png" height="30" width="30" style="border-radius:3px;" /></li></a>
+								<li><div style="display:inline;" onmouseup="DownClick()"; onmousedown="DownClick()"; onmouseover="DownHover()"; onmouseout="DownHover()";><a href="#"><img src="/assets/down.png" id="Symbol3" name="Symbol3" style="padding-top:3px;" /></a></div></li>
 							</ul>
 						</div>
 					</div>					
