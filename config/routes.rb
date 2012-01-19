@@ -16,7 +16,7 @@ Huddlers::Application.routes.draw do
 	resources :posts
   resources :huddlers_card
 
-  root :to => "newsfeed#index"
+  root :to => "huddlers_card#card"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

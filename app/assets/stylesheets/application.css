@@ -10,7 +10,7 @@
 body {
   width:100%;
   margin: 0 auto;
-  background-color: #4B7399;
+  background-color: white;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
@@ -87,9 +87,10 @@ a {
 
 .picture {
   border: solid 1px #CCC;
+  border-radius: 8px;
   padding: 10px 10px;
   float: left;
-  margin-right: 20px;
+  margin-right: 1.3em;
   margin-bottom: 20px;
 }
 
@@ -99,9 +100,15 @@ a {
   font-weight: bold;
 }
 
+.picture .image_placeholder2 {
+  width: 226px;
+  height: 183px;
+  background-color: #B6B6B6;
+}
+
 .picture .image_placeholder {
-  width: 150px;
-  height: 100px;
+  width: 137px;
+  height: 110px;
   background-color: #B6B6B6;
 }
 
