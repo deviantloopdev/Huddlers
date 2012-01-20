@@ -17,7 +17,7 @@ Huddlers::Application.routes.draw do
   resources :pictures
 	resources :posts
   resources :huddlers_card
-
+  resources :achievements
   root :to => "huddlers_card#card"
   # The priority is based upon order of creation:
   # first created -> highest priority.
