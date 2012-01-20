@@ -1,5 +1,5 @@
 <head>
-<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+<!-- <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'> -->
 <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
 <%= stylesheet_link_tag "huddlers_card.css" %>
 <%= javascript_include_tag "huddlers_card.js" %>
@@ -30,19 +30,14 @@ ID :<%= @user_profile.id %>
         	<center><a href="#" class="btn large primary">Send Friend Request?</a>
         	<a href="#" onclick="close_request()"class="btn large">Cancel</a><center>
 	</div>
-<h1>My Huddlers Card</h1>
+<h1 style="padding-left:8em; padding-top:1em;">My Card</h1>
 <div class="row">
 	<br />
 	<br />
-	<div style="margin-top:-120px;background-color:#e5e7d5;"class="span4">
+	<div style="margin-top:-12em; height:100%; background-color:#e5e7d5;"class="span4">
 		<div class="column-content">
 		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<center><img src="/assets/rails.png" width="175px" height="175px"></center>
+		<center><img src="/assets/adam2.png" width="175" style="padding-top:4em;></center>
 		<br />
 		<br />
 			Height: <%= current_user.height_ft %>' <%= current_user.height_in %>"<br />
@@ -58,7 +53,7 @@ ID :<%= @user_profile.id %>
 		</div>
 	</div>
 	
-	<div style="margin-top:20px;background-color:#e9eaea;"class="span4">
+	<div style="margin-top:-40px;background-color:#e9eaea;"class="span4">
 		<h1 class="big-title">Achievements</h1>
 		<div id="achievements" style="height:200px;" class="content-box">
 		yo
@@ -76,7 +71,7 @@ ID :<%= @user_profile.id %>
 		yo
 		</div>
 	</div>
-	<div style="background-color:#e9eaea;" id="right-most" class="span9">
+	<div style="background-color:#e9eaea; margin-top:-40px;" id="right-most" class="span9">
 		<button style="margin-right:10px; float:right;" onclick="" class="lightbox"  > Message</button>
         	<button style="margin-right:10px; float:right;" onclick="" class="lightbox2"> Add as a Team-Mate</button>
 		<div id="activities_container" class="feed_container">
