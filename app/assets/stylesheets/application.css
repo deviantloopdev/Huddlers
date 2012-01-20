@@ -112,6 +112,18 @@ a {
   background-color: #B6B6B6;
 }
 
+.picture .image_placeholder2_achievements {
+  width: 226px;
+  height: 183px;
+  background-color: #FFF;
+}
+
+.picture .image_placeholder_achievements {
+  width: 137px;
+  height: 110px;
+  background-color: #FFF;
+}
+
 .picture .actions {
   font-size: 10px;
   text-align: center;
