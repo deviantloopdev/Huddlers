@@ -1,3 +1,27 @@
+<script>
+	var tggle='off'
+	
+	function PostHover(){ 
+		if (tggle=='on'){ 
+			document.Symbol1.src="/assets/post.png" 
+			tggle='off'
+		} else { 
+			document.Symbol1.src="/assets/post_h.png" 
+			tggle='on'
+		} 
+	}
+	
+	function PostClick(){ 
+		if (tggle=='on'){ 
+			document.Symbol1.src="/assets/post_h.png" 
+			tggle='off'
+		} else { 
+			document.Symbol1.src="/assets/post_a.png" 
+			tggle='on'
+		} 
+	}
+</script>
+
 <head>
 <!-- <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'> -->
 <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
@@ -91,11 +115,10 @@ ID :<%= @user_profile.id %>
 		<br/>
 		<div id="shoutout_input" class="column-content" >
 			<h4 style="padding-left:1em; padding-top:0.7em;">Shout Outs</h4>
-			<img src="/assets/post.png" />
 			<div style="padding-left:1em; padding-top:0.7em; display:block; margin-left:auto; margin-right:auto;" class="input">
                         <textarea style=""class="xlarge" id="shoutout_textarea" name="textarea2" rows="3"></textarea>
       </div>
-                <button onclick="shoutout_update(); save_shoutout(<%= @user_profile.id %>);" style="padding-left:1em; padding-top:0.7em;">POST</button>	
+                <div onclick="shoutout_update(); save_shoutout(<%= @user_profile.id %>)"; style="width:52; height:32; cursor:hand; padding-left:1em; padding-top:0.7em;"><img src="/assets/post.png" /></div>	
 								<br />
 								<br />
 		</div>
@@ -116,7 +139,7 @@ ID :<%= @user_profile.id %>
             <div style="display:none;" id="new_comment_postid<%= post.id %>">
               <div style="margin-top:5px;margin-bottom:5px;margin-left:50px;" id="">      
                 <input id="comment_<%= post.id %>"type="text" />
-                <button onclick="add_comment(<%= post.id %>);">
+                <button onclick="add_comment(<%= post.id %>);">POST
 				</button>
 				<button style="margin-left:20px;" onclick="">
 					Close
