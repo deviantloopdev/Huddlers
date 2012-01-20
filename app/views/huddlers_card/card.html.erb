@@ -37,45 +37,47 @@ ID :<%= @user_profile.id %>
 	<div style="margin-top:-12em; height:100%; background-color:#e5e7d5;"class="span4">
 		<div class="column-content">
 		<br />
-		<center><img src="/assets/adam2.png" width="175" style="padding-top:4em;></center>
+		<center><img src="/assets/adam2.png" width="175" style="padding-top:4em;"></center>
 		<br />
 		<br />
-			Height: <%= current_user.height_ft %>' <%= current_user.height_in %>"<br />
-        	Weight: <%= current_user.weight %><br />
-        	Age: 		<%= current_user.age %><br />
-        	City: 	<%= current_user.city %>
+		<div style="padding-left:1em;">
+			Height: <%= current_user.height_ft %>5' 11<%= current_user.height_in %>"<br />
+        	Weight: <%= current_user.weight %>180<br />
+        	Age: 		<%= current_user.age %>25<br />
+        	City: 	<%= current_user.city %>Toronto
+        </div>
 		<br />
 		<br />
 		<br />
 	
 		
-		<h4>Biography</h4>
+		<h4 style="padding-left:1em;">Biography</h4>
 		</div>
 	</div>
 	
-	<div style="margin-top:-40px;background-color:#e9eaea;"class="span4">
-		<h1 class="big-title">Achievements</h1>
+	<div style="border-radius:10px; margin-top:-40px;background-color:#e9eaea;"class="span4">
+		<h4 style="padding-left:1em; padding-top:0.7em;">Achievements</h4>
 		<div id="achievements" style="height:200px;" class="content-box">
 		yo
 		</div>
-		<h1 class="title">Sports</h1>
+		<h4 style="padding-left:1em; padding-top:0.7em;">Sports</h1>
 		<div id="sports" style="height:200px;"class="content-box">
 		yo
 		</div>
-		<h1 class="title">Equipment - #add erb for chosen support</h1>
+		<h4 style="padding-left:1em; padding-top:0.7em;">Equipment</h1>
 		<div id="equipments" style="height:200px;"class="content-box">
 		yo
 		</div>
-		<h1 class="title">My Teams</h1>
+		<h4 style="padding-left:1em; padding-top:0.7em;">My Teams</h1>
 		<div id="my_teams" style="height:200px;" class="content-box">
 		yo
 		</div>
 	</div>
-	<div style="background-color:#e9eaea; margin-top:-40px;" id="right-most" class="span9">
-		<button style="margin-right:10px; float:right;" onclick="" class="lightbox"  > Message</button>
-        	<button style="margin-right:10px; float:right;" onclick="" class="lightbox2"> Add as a Team-Mate</button>
+	<div style="border-radius:10px; background-color:#e9eaea; margin-top:-40px;" id="right-most" class="span9">
+		<button style="margin-right:10px; padding-top:1.2em; float:right;" onclick="" class="lightbox"  > Message</button>
+        	<button style="margin-right:10px; padding-top:1.2em; float:right;" onclick="" class="lightbox2"> Add as a Team-Mate</button>
 		<div id="activities_container" class="feed_container">
-			<h1 class="big-title">Recent Activities</h1>
+			<h4 style="padding-left:1em; padding-top:0.7em;">Recent Activites</h4>
 			<div id="" class="content-box">
 				<div id="feed_parcel_container">
 					<div id="feed_parcel">
@@ -88,17 +90,18 @@ ID :<%= @user_profile.id %>
 		<br/>
 		<br/>
 		<div id="shoutout_input" class="column-content" >
-			<div style="display:block; margin-left:auto; margin-right:auto;" class="input">
+			<h4 style="padding-left:1em; padding-top:0.7em;">Shout Outs</h4>
+			<div style="padding-left:1em; padding-top:0.7em; display:block; margin-left:auto; margin-right:auto;" class="input">
                         <textarea style=""class="xlarge" id="shoutout_textarea" name="textarea2" rows="3"></textarea>
       </div>
-                <button onclick="shoutout_update(); save_shoutout(<%= @user_profile.id %>); ">POST</button>	
+                <button onclick="shoutout_update(); save_shoutout(<%= @user_profile.id %>);" style="padding-left:1em; padding-top:0.7em;">POST</button>	
 								<br />
 								<br />
 		</div>
 
-		<div id="real_wall">
+		<div id="real_wall" style="padding-left:1em; padding-top:0.7em;">
     		<% for post in @posts.reverse %>
-			 	  <div style="margin-left:0px;margin-bottom:8px; margin-top:8px;"id="post_<%= post.id %>">
+			 	  <div style="margin-left:0px;margin-bottom:18px; margin-top:8px;"id="post_<%= post.id %>">
             <%= post.body %>
             <div id="">
             <a href="#" onclick="add_fan();save_fan();">Fan</a><a style="margin-bottom:90px; margin-left:10px;" onclick="open_comment(<%= post.id %>);"href="#">Comment</a>
