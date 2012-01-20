@@ -5,6 +5,11 @@ body
 	font-family: Helvetica, Arial;
 }
 
+hr
+{
+  height:0px;
+}
+
 .backdrop
 {
 	position:absolute;

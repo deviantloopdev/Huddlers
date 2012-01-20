@@ -6,9 +6,12 @@ class CommentsController < ApplicationController
 
 	def create
 		@comment = Comment.new(
-		:body => params[:comment_body]
-		)
+		:body => params[:comment_body],
+		:post_id => params[:the_post_id],
+    :type_of => params[:the_type_of]
+    )
 		@comment.save
+    render :nothing => true
 	end
 
 	def destroy
