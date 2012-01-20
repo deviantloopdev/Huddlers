@@ -20,6 +20,9 @@ class HuddlersCardController < ApplicationController
 	end		
 	
 	def card
+    @user_profile = User.find(params[:id])   
+    @posts = Post.where(:user_id => params[:id])
+
     render :layout => 'application.html.erb'
     #@posts = reverse_posts()
   end

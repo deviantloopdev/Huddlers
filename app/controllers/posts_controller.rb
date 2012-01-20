@@ -20,7 +20,9 @@ class PostsController < ApplicationController
   def create
     
     @post = Post.new(
-    :body => params[:texty])
+    :body => params[:texty],
+#    :user_id => 2)
+    :user_id => params[:the_id])
     @post.save
     render :nothing => true
   end

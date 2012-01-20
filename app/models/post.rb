@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
 
   
   #if user and recipient are the same then it is a status update
-  attr_accessible :body, :user, :recipient
+  attr_accessible :body, :user, :recipient, :user_id
 end
 
 #id

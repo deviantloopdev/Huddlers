@@ -7,7 +7,8 @@
 
 </head>
 
-
+Weight :<%= @user_profile.weight %>
+ID :<%= @user_profile.id %>
 <body>
 <div style="" class="body-content">
 	<div class="backdrop"></div>
@@ -96,30 +97,28 @@
 			<div style="display:block; margin-left:auto; margin-right:auto;" class="input">
                         <textarea style=""class="xlarge" id="shoutout_textarea" name="textarea2" rows="3"></textarea>
       </div>
-                <button onclick="shoutout_update(event, <%= Time.now %>); save_shoutout(); ">POST</button>	
+                <button onclick="shoutout_update(); save_shoutout(<%= @user_profile.id %>); ">POST</button>	
 								<br />
 								<br />
 		</div>
 
 		<div id="real_wall">
-				<% post = Post.all %>
-				<%= post.length %>
-				<% for post in Post.all%>
-				<% end %>
-    		<% for post in Post.all  %>
-				    
-			 	  <div style="margin-left:0px;margin-bottom:8px; margin-top:8px;"id="post_<%= post.id + 356%>">
+    		<% for post in @posts.reverse %>
+			 	  <div style="margin-left:0px;margin-bottom:8px; margin-top:8px;"id="post_<%= post.id %>">
             <%= post.body %>
             <div id="">
-            <a href="#" onclick="add_fan();save_fan();">Fan</a><a style="margin-bottom:90px; margin-left:10px;" onclick="open_comment(<%= post.id + 356%>);"href="#">Comment</a>
+            <a href="#" onclick="add_fan();save_fan();">Fan</a><a style="margin-bottom:90px; margin-left:10px;" onclick="open_comment(<%= post.id %>);"href="#">Comment</a>
 			      </div>
             </div >
-            <div id="comments_postid_<%= post.id + 356%>">
-            
+            <div id="comments_postid_<%= post.id %>">
+              
+              <% for comment in Comment.where(:post_id => post.id)%>
+                <%= comment.body %>
+              <% end %>
             </div>
-            <div style="display:none;" id="new_comment_postid<%= post.id + 356%>">
+            <div style="display:none;" id="new_comment_postid<%= post.id %>">
               <div style="margin-top:5px;margin-bottom:5px;margin-left:50px;" id="">      
-                <input id="comment_<%= post.id + 356 %>"type="text" /><button onclick="add_comment(<%= post.id + 356%>);">Post</button><button style="margin-left:20px;" onclick="">Close</button>
+                <input id="comment_<%= post.id %>"type="text" /><button onclick="add_comment(<%= post.id %>);">Post</button><button style="margin-left:20px;" onclick="">Close</button>
               </div> 
             </div>
         <% end %>	

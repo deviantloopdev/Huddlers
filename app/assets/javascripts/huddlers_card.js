@@ -53,21 +53,26 @@ function string_timestamp(event){
 	return stamp;
 }
 
-function shoutout_update(event, stamp){
+function shoutout_update(){
   var prev_html = $("#real_wall").html();
   str0 = prev_html;
+	var d = new Date();	
+	stamp = d.getTime();
+	stamp = stamp + '';
   str1 = '<div id="new'+stamp+'">'+$("#shoutout_textarea").val()+'</div>';
   str2 = '<hr/>';
   str3 = '<a href="#">Like</a><a style="margin-left:10px;" href="#">Comment</a>';
   $('#real_wall').html(str1 + str3 + str2 + str0);
 }
 
-function save_shoutout(){
+function save_shoutout(id){
 	var shoutout = $('#shoutout_textarea').val();
+	id = id+'';
+	alert(id);
 	$.ajax({
 		url: "/create_post",
 		type: "POST",
-		data: {texty: shoutout},
+		data: {texty: shoutout, the_id : id},
 		
 		success:function(data){
 		//alert('success');
@@ -93,7 +98,7 @@ function add_comment(id){
 	var sub_info = 'hnm' + '<a href="#" onclick="">Fan</a><hr />';
 	$('#comments_postid_'+id).html(previous_comments + new_comment + sub_info);
 	
-	save_comment(id);
+	save_comment(id, comment);
 }
 
 
@@ -113,20 +118,21 @@ function open_comment(id){
 	//alert(div_name);
 }
 
-function save_comment(){
-  /* var comment = $('#comment_textarea').val();
-   $.ajax({
+function save_comment(id, comment){
+  //alert(id);
+	//var comment = $('#new_comment_postid_'+id).val();	
+	$.ajax({
      url: "/create_comment",
      type: "POST",
-     data: {comment: comment},
+     data: {comment_body: comment, the_post_id : id, the_type_of : 'post'},
     success:function(data){
      //alert('success');
    },
    error:function(data){
      //alert('error');
    }
-   });*/
-	alert('called save');
+   });
+//	alert('called save');
 }
 
 
