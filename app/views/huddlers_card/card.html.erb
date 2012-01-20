@@ -91,6 +91,7 @@ ID :<%= @user_profile.id %>
 		<br/>
 		<div id="shoutout_input" class="column-content" >
 			<h4 style="padding-left:1em; padding-top:0.7em;">Shout Outs</h4>
+			<img src="/assets/post.png" />
 			<div style="padding-left:1em; padding-top:0.7em; display:block; margin-left:auto; margin-right:auto;" class="input">
                         <textarea style=""class="xlarge" id="shoutout_textarea" name="textarea2" rows="3"></textarea>
       </div>
@@ -108,14 +109,18 @@ ID :<%= @user_profile.id %>
 			      </div>
             </div >
             <div id="comments_postid_<%= post.id %>">
-              
               <% for comment in Comment.where(:post_id => post.id)%>
                 <%= comment.body %>
               <% end %>
             </div>
             <div style="display:none;" id="new_comment_postid<%= post.id %>">
               <div style="margin-top:5px;margin-bottom:5px;margin-left:50px;" id="">      
-                <input id="comment_<%= post.id %>"type="text" /><button onclick="add_comment(<%= post.id %>);">Post</button><button style="margin-left:20px;" onclick="">Close</button>
+                <input id="comment_<%= post.id %>"type="text" />
+                <button onclick="add_comment(<%= post.id %>);">
+				</button>
+				<button style="margin-left:20px;" onclick="">
+					Close
+				</button>
               </div> 
             </div>
         <% end %>	
