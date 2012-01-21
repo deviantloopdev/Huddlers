@@ -115,18 +115,19 @@
 		cursor: pointer;
 	}
 	
-	#homeList
+	.homeList
 	{
 		margin-left: 0;
 		padding-left: 0;
 		list-style: none;
 		text-align: middle;
+		font-size:18px;
 	}
 	
-	#homeList li 
+	.homeList li 
 	{
 		padding-left: 30px;
-		padding-bottom: 20px;
+		padding-bottom: 10px;
 		padding-top: 4px;
 		background-image: url("/assets/arrow.png");
 		background-repeat: no-repeat;
@@ -247,7 +248,7 @@
 
 <div class="homeContainer" style="width:100%; height:100%; background-color:white; position:absolute; z-index:-1000;"></div>
 <div id="homeBackground"><img src="/assets/bg1.png" width="100%"></div>
-<div id="outerContainer" style="height:700px;">
+<div id="outerContainer" style="height:800px;">
 <div id="contentContainer" style="height:430px;">
 	<div id="container" style="height:80px; background-image: linear-gradient(bottom, #002100 1%, #003400 51%);
 								background-image: -o-linear-gradient(bottom, #002100 1%, #003400 51%);
@@ -315,23 +316,26 @@
 				<% end %>
 			</div>
 			<div id="homeHook" style="width:400px; padding-left:30px; padding-top:15px;">
-				<div id="sloganContainer" style="height:100px; display:table;">
+				<div id="sloganContainer" style="height:90px; display:table;">
 					<div id="slogan" style="vertical-align:middle; display:table-cell; font-size:30px;">
 						Connecting Athletes Like <b>Us</b>
 					</div>
 				</div>
-				<div id="listContainer">
-						<ul id="homeList">
+				<div class="listContainer">
+						<ul class="homeList">
 							<li>Create your card</li>
 							<li>Share your athletic activity and achievements</li>
 							<li>Become a better athlete</li>
 						</ul>
-					</div>
+						<div id="copyright" style="padding-top:4em; font-size:12px;">
+							Huddlers &copy; 2011
+						</div>
+				</div>
 			</div> 
 	</div>
 </div>	
 
-<div id="footerContainer" style="width:100%; height:60px; background-image: linear-gradient(bottom, #B8BFA7 22%, #E4E6D5 70%);
+<div id="footerContainer" style="width:100%; height:60px; margin-top:4em; background-image: linear-gradient(bottom, #B8BFA7 22%, #E4E6D5 70%);
 									background-image: -o-linear-gradient(bottom, #B8BFA7 22%, #E4E6D5 70%);
 									background-image: -moz-linear-gradient(bottom, #B8BFA7 22%, #E4E6D5 70%);
 									background-image: -webkit-linear-gradient(bottom, #B8BFA7 22%, #E4E6D5 70%);
@@ -360,51 +364,49 @@
 </div>
 
 
-<div class="homeContainer" style="width:100%; height:700px; background-color:white; position:absolute; z-index:-1000;"></div>
+<div class="homeContainer" style="width:100%; height:800px; background-color:white; position:absolute; z-index:-1000;"></div>
 <div id="aboutBackground"><img src="/assets/bg2.png" width="100%" /></div>
-<div id="OuterContainer" style="height:700px; width:1088px; min-width:980px; margin:0 auto;">
+<div id="OuterContainer" style="height:800px; width:1088px; min-width:980px; margin:0 auto;">
 	<div id="aboutHook" style="width:500px; padding-left:30px; padding-top:15px;">
-		<div id="aboutContainer" style="height:100px; display:table;">
-			<div id="about" style="vertical-align:middle; display:table-cell; font-size:18px;">
+		<div id="aboutContainer" style="height:90px; display:table;">
+			<div id="about" style="vertical-align:middle; display:table-cell; font-size:30px; padding-top:2em;">
 				About
 			</div>
 		</div>
-		<div id="listContainer">
-			<ul id="homeList">
+		<div class="listContainer">
+			<ul class="homeList">
 				<li>Huddlers.com is a social network for the Everyday Athlete - Like you</li>
 				<li>Develop your athletic network and connect with similar athletes</li>
 				<li>Create an online athletic identity and share your sports</li>
 			</ul>
 		</div>
+		<p><a href="#outerContainer" onmouseup="smoothScroll('outerContainer'); return false">Back to Home</a></p>
 	</div>	
-	ABOUT US SECTION!!!
-	<p><a href="#outerContainer" onmouseup="smoothScroll('outerContainer'); return false">Back to Home</a></p>
 	
-	<div id="teamHook" style="width:400px; padding-left:30px; padding-top:15px;">
-		<div id="teamContainer" style="height:100px; display:table;">
-			<div id="team" style="vertical-align:middle; display:table-cell; font-size:18px;">
+	<div id="teamHook" style="width:400px; padding-left:30px; padding-top:15px; padding-top:8em;">
+		<div id="teamContainer" style="height:90px; display:table;">
+			<div id="team" style="vertical-align:middle; display:table-cell; font-size:30px;">
 				Find Teammates
 			</div>
 		</div>
-		<div id="listContainer">
-			<ul id="homeList">
+		<div class="listContainer">
+			<ul class="homeList">
 				<li>Create your card</li>
 				<li>Share your athletic activity and achievements</li>
 				<li>Become a better athlete</li>
 			</ul>
 		</div>
+		<p><a href="#outerContainer" onmouseup="smoothScroll('outerContainer'); return false">Back to Home</a></p>
 	</div>	
-	FIND TEAMMATES SECTION!!!
-	<p><a href="#outerContainer" onmouseup="smoothScroll('outerContainer'); return false">Back to Home</a></p>
 </div>
 
-<div class="homeContainer" style="width:100%; height:700px; background-color:white; position:absolute; z-index:-1000;"></div>
+<div class="homeContainer" style="width:100%; height:800px; background-color:white; position:absolute; z-index:-1000;"></div>
 <div id="aboutBackground"><img src="/assets/bg3.png" width="100%" /></div>
 <div id="OuterContainer" style="height:800px; width:1088px; min-width:980px; margin:0 auto;">
-	<div id="joinContainer" style="height:400px;">
+	<div id="joinContainer" style="height:400px; padding-top:2em;">
 		<div style="width:508px; min-width:400px; padding-top:15px; float:right;">
-			<div id="contactContainer" style="height:100px; display:table;">
-				<div id="contact" style="vertical-align:middle; display:table-cell; font-size:18px;">
+			<div id="contactContainer" style="height:90px; display:table;">
+				<div id="contact" style="vertical-align:middle; display:table-cell; font-size:30px;">
 					Contact
 				</div>
 			</div>
@@ -420,35 +422,18 @@
 			</form>
 		</div>
 		<div id="joinHook" style="width:500px; padding-left:30px; padding-top:15px;">
-			<div id="joinContainer" style="height:100px; display:table;">
-				<div id="join" style="vertical-align:middle; display:table-cell; font-size:18px;">
+			<div id="joinContainer" style="height:90px; display:table;">
+				<div id="join" style="vertical-align:middle; display:table-cell; font-size:30px;">
 					Join the Team
 				</div>
 			</div>
-			<div id="listContainer">
-				<ul id="homeList">
+			<div class="listContainer">
+				<ul class="homeList">
 					<li>We're always looking to meet talented people with a passion for sports</li>
 					<li>Send us an email to hear more about us</li>
 				</ul>
 			</div>
+			<p><a href="#outerContainer" onmouseup="smoothScroll('outerContainer'); return false">Back to Home</a></p>
 		</div>	
-		JOIN THE TEAM SECTION!!!
-		<p><a href="#outerContainer" onmouseup="smoothScroll('outerContainer'); return false">Back to Home</a></p>
 	</div>
-	<div id="termsHook" style="width:400px; padding-left:30px; padding-top:15px;">
-		<div id="termsContainer" style="height:100px; display:table;">
-			<div id="terms" style="vertical-align:middle; display:table-cell; font-size:18px;">
-				CONNECTING ATHLETES LIKE <b>US</b>
-			</div>
-		</div>
-		<div id="listContainer">
-			<ul id="homeList">
-				<li>Create your card</li>
-				<li>Share your athletic activity and achievements</li>
-				<li>Become a better athlete</li>
-			</ul>
-		</div>
-	</div>	
-	JOIN THE TEAM SECTION!!!
-	<p><a href="#outerContainer" onmouseup="smoothScroll('outerContainer'); return false">Back to Home</a></p>
 </div>
