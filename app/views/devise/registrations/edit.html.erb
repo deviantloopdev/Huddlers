@@ -1,47 +1,191 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<style>
+	.logIn_label
+	{
+		padding-left:10px;
+	}
+	
+	.form_field
+	{
+		height: 30px;
+		width: 221px;
+		border-radius: 5px;
+		outline: none;
+		padding-left: 8px;	
+		margin-bottom: 10px;
+	}
+	
+	.form_label
+	{
+		text-align: right;
+		color:#002100;
+	}
+	
+	.contact_form_field
+	{
+		height: 30px;
+		width: 271px;
+		border-radius: 5px;
+		outline: none;
+		padding-left: 8px;	
+		margin-bottom: 10px;
+	}
+	
+	.contact_msg_field
+	{
+		width: 271px;
+		border: 1px solid #C4C4C4;
+		border-radius: 5px;
+		outline: none;
+		padding-left: 8px;	
+		margin-bottom: 10px;
+	}
+	
+	#footerNav li
+	{
+		display: inline;
+		display: table-cell;
+		list-style-type: none;
+		vertical-align: middle;
+		height:32px;
+		padding-right: 50px;
+	}
+	
+	#homeBackground
+	{
+		position: absolute;
+		z-index: -10;
+		width: 100%;
+		margin-top: -3em;
+	}
+	
+	#aboutBackground
+	{
+		position: absolute;
+		z-index: -10;
+		width: 100%;
+	}
+	
+	#teamBackground
+	{
+		position: absolute;
+		z-index: -10;
+		width: 100%;
+	}
+	
+	.signUpButton
+	{
+		background-image: url("/assets/signup.png");
+		width: 221px;
+		height: 62px;
+		border-style: none;
+	}
+	
+	.signUpButton:hover
+	{
+		background-image: url("/assets/signup_h.png");
+		cursor: pointer;
+	}
+	
+	.signUpButton:active
+	{
+		background-image: url("/assets/signup_a.png");
+		cursor: pointer;
+	}
+	
+	.logInButton
+	{
+		background-image: url("/assets/login.png");
+		width: 60px;
+		height: 32px;
+		border-style: none;
+		border-radius: 6px;
+		vertical-align: top;
+		margin-left: 10px;
+	}
+	
+	.logInButton:hover
+	{
+		background-image: url("/assets/login_h.png");
+		cursor: pointer;
+	}
+	
+	.logInButton:active
+	{
+		background-image: url("/assets/login_a.png");
+		cursor: pointer;
+	}
+	
+	#homeList
+	{
+		margin-left: 0;
+		padding-left: 0;
+		list-style: none;
+		text-align: middle;
+	}
+	
+	#homeList li 
+	{
+		padding-left: 30px;
+		padding-bottom: 20px;
+		padding-top: 4px;
+		background-image: url("/assets/arrow.png");
+		background-repeat: no-repeat;
+		background-position: 0 .5em;
+	}
+	
+</style>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
-  
-  <div><%= f.label :first_name, "First Name" %><br />
-  <%= f.text_field :first_name %></div>
-
-  <div><%= f.label :last_name, "Last Name" %><br />
-  <%= f.text_field :last_name %></div>
-  
-  <div><%= f.label :age %><br />
-  <%= f.text_field :age %></div>
-  
-  <div>Height <br /><%= f.label :height_ft, "Feet" %>&nbsp;
-  <%= f.text_field :height_ft %>&nbsp;
-
-  <%= f.label :height_in, "Inches" %>&nbsp;
-  <%= f.text_field :height_in %></div>
-  
-  <div><%= f.label :weight %><br />
-  <%= f.text_field :weight %></div>
-  
-  
-  <div><%= f.label :city %><br />
-  <%= f.text_field :city %></div>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
-
-  <div><%= f.submit "Update" %></div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
-
-<%= link_to "Back", :back %>
+<!-- <h2>Edit <%= resource_name.to_s.humanize %></h2> -->
+<div class="homeContainer" style="width:100%; height:100%; background-color:white; position:absolute; z-index:-1000;"></div>
+	<div id="homeBackground"><img src="/assets/bg1.png" width="100%"></div>
+		<div id="editContainer" style="width:700px; border-style:solid; border-width:1px; margin:0 auto;">
+			<div id="editUserContent" style="margin:1.5em;">
+				<h2>Edit Your Profile</h2>
+				<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+				  <%= devise_error_messages! %>
+				  
+				  <div><%= f.label :first_name, "First Name" %><br />
+				  <%= f.text_field :first_name %><br/><br/></div>
+				
+				  <div><%= f.label :last_name, "Last Name" %><br />
+				  <%= f.text_field :last_name %><br/><br/></div>
+				  
+				  <div><%= f.label :age %><br />
+				  <%= f.text_field :age %><br/><br/></div>
+				  
+				  <div>Height <br /><%= f.label :height_ft, "Feet" %>&nbsp;
+				  <%= f.text_field :height_ft %>&nbsp;
+				
+				  <%= f.label :height_in, "Inches" %>&nbsp;
+				  <%= f.text_field :height_in %><br/><br/></div>
+				  
+				  <div><%= f.label :weight %><br />
+				  <%= f.text_field :weight %><br/><br/></div>
+				  
+				  
+				  <div><%= f.label :city %><br />
+				  <%= f.text_field :city %><br/><br/></div>
+				
+				  <div><%= f.label :email %><br />
+				  <%= f.email_field :email %><br/><br/></div>
+				
+				  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+				  <%= f.password_field :password %></div>
+				
+				  <div><%= f.label :password_confirmation %><br />
+				  <%= f.password_field :password_confirmation %></div>
+				
+				  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+				  <%= f.password_field :current_password %><br/><br/></div>
+				
+				  <div><%= f.submit "Update" %><br/><br/></div>
+				<% end %>
+				
+				<h3>Cancel my account</h3>
+				
+				<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
+				
+				<%= link_to "Back", :back %>
+			</div>
+		</div>
+</div>
