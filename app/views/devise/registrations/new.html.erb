@@ -1,24 +1,314 @@
-<h2>Sign up</h2>
+<style>
+	.logIn_label
+	{
+		padding-left:10px;
+	}
+	
+	.form_field
+	{
+		height: 30px;
+		width: 221px;
+		border-radius: 5px;
+		outline: none;
+		padding-left: 8px;	
+		margin-bottom: 10px;
+	}
+	
+	.form_label
+	{
+		text-align: right;
+		color:#002100;
+	}
+	
+	.contact_form_field
+	{
+		height: 30px;
+		width: 271px;
+		border-radius: 5px;
+		outline: none;
+		padding-left: 8px;	
+		margin-bottom: 10px;
+	}
+	
+	.contact_msg_field
+	{
+		width: 271px;
+		border: 1px solid #C4C4C4;
+		border-radius: 5px;
+		outline: none;
+		padding-left: 8px;	
+		margin-bottom: 10px;
+	}
+	
+	#footerNav li
+	{
+		display: inline;
+		display: table-cell;
+		list-style-type: none;
+		vertical-align: middle;
+		height:32px;
+		padding-right: 50px;
+	}
+	
+	#homeBackground
+	{
+		position: absolute;
+		z-index: -10;
+		width: 100%;
+		margin-top: 50px;
+	}
+	
+	#aboutBackground
+	{
+		position: absolute;
+		z-index: -10;
+		width: 100%;
+	}
+	
+	#teamBackground
+	{
+		position: absolute;
+		z-index: -10;
+		width: 100%;
+	}
+	
+	.signUpButton
+	{
+		background-image: url("/assets/signup.png");
+		width: 221px;
+		height: 62px;
+		border-style: none;
+	}
+	
+	.signUpButton:hover
+	{
+		background-image: url("/assets/signup_h.png");
+		cursor: pointer;
+	}
+	
+	.signUpButton:active
+	{
+		background-image: url("/assets/signup_a.png");
+		cursor: pointer;
+	}
+	
+	.logInButton
+	{
+		background-image: url("/assets/login.png");
+		width: 60px;
+		height: 32px;
+		border-style: none;
+		border-radius: 6px;
+		vertical-align: top;
+		margin-left: 10px;
+	}
+	
+	.logInButton:hover
+	{
+		background-image: url("/assets/login_h.png");
+		cursor: pointer;
+	}
+	
+	.logInButton:active
+	{
+		background-image: url("/assets/login_a.png");
+		cursor: pointer;
+	}
+	
+	#homeList
+	{
+		margin-left: 0;
+		padding-left: 0;
+		list-style: none;
+		text-align: middle;
+	}
+	
+	#homeList li 
+	{
+		padding-left: 30px;
+		padding-bottom: 20px;
+		padding-top: 4px;
+		background-image: url("/assets/arrow.png");
+		background-repeat: no-repeat;
+		background-position: 0 .5em;
+	}
+	
+</style>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-  
-  <div><%= f.label :first_name, "First Name" %><br />
-  <%= f.text_field :first_name %></div>
+<script>
+	var tggle='off'
+	
+	function SignUpHover(){ 
+		if (tggle=='on'){ 
+			document.Symbol1.src="/assets/signup2.png" 
+			tggle='off'
+		} else { 
+			document.Symbol1.src="/assets/signup2_h.png" 
+			tggle='on'
+		} 
+	}
+	
+	function SignUpClick(){
+		if (tggle=='off'){ 
+			document.Symbol1.src="/assets/signup2_h.png" 
+			tggle='on'
+		} else { 
+			document.Symbol1.src="/assets/signup2_a.png" 
+			tggle='off'
+		}
+	}
+	
+	function TwitterHover(){ 
+		if (tggle=='on'){ 
+			document.Symbol2.src="/assets/twitter.png" 
+			tggle='off'
+		} else { 
+			document.Symbol2.src="/assets/twitter_h.png" 
+			tggle='on'
+		} 
+	}
+	
+	function TwitterClick(){
+		if (tggle=='off'){ 
+			document.Symbol2.src="/assets/twitter_h.png" 
+			tggle='on'
+		} else { 
+			document.Symbol2.src="/assets/twitter_a.png" 
+			tggle='off'
+		}
+	}
+	
+	function ContactSubmitHover(){ 
+		if (tggle=='on'){ 
+			document.Symbol4.src="/assets/submit.png" 
+			tggle='off'
+		} else { 
+			document.Symbol4.src="/assets/submit_h.png" 
+			tggle='on'
+		} 
+	}
+	
+	function ContactSubmitClick(){
+		if (tggle=='off'){ 
+			document.Symbol4.src="/assets/submit_h.png" 
+			tggle='on'
+		} else { 
+			document.Symbol4.src="/assets/submit_a.png" 
+			tggle='off'
+		}
+	}
+</script> 
+<script>
+	function currentYPosition() {
+	    // Firefox, Chrome, Opera, Safari
+	    if (self.pageYOffset) return self.pageYOffset;
+	    // Internet Explorer 6 - standards mode
+	    if (document.documentElement && document.documentElement.scrollTop)
+	        return document.documentElement.scrollTop;
+	    // Internet Explorer 6, 7 and 8
+	    if (document.body.scrollTop) return document.body.scrollTop;
+	    return 0;
+	}
+	
+	function elmYPosition(eID) {
+	    var elm = document.getElementById(eID);
+	    var y = elm.offsetTop;
+	    var node = elm;
+	    while (node.offsetParent && node.offsetParent != document.body) {
+	        node = node.offsetParent;
+	        y += node.offsetTop;
+	    } return y;
+	}
+	
+	function smoothScroll(eID) {
+	    var startY = currentYPosition();
+	    var stopY = elmYPosition(eID);
+	    var distance = stopY > startY ? stopY - startY : startY - stopY;
+	    if (distance < 100) {
+	        scrollTo(0, stopY); return;
+	    }
+	    var speed = Math.round(distance / 40);
+	    if (speed >= 20) speed = 20;
+	    var step = Math.round(distance / 25);
+	    var leapY = stopY > startY ? startY + step : startY - step;
+	    var timer = 0;
+	    if (stopY > startY) {
+	        for ( var i=startY; i<stopY; i+=step ) {
+	            setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+	            leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+	        } return;
+	    }
+	    for ( var i=startY; i>stopY; i-=step ) {
+	        setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+	        leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+	    }
+	}
+</script>
+<body>
+<div class="homeContainer" style="width:100%; height:100%; background-color:white; position:absolute; z-index:-1000;"></div>
+<div id="homeBackground"><img src="/assets/bg1.png" width="100%"></div>
+<div id="outerContainer" style="height:700px;">
+<div id="contentContainer" style="height:430px;">
+	<div id="container" style="height:80px; margin-bottom:3em; background-image: linear-gradient(bottom, #002100 1%, #003400 51%);
+								background-image: -o-linear-gradient(bottom, #002100 1%, #003400 51%);
+								background-image: -moz-linear-gradient(bottom, #002100 1%, #003400 51%);
+								background-image: -webkit-linear-gradient(bottom, #002100 1%, #003400 51%);
+								background-image: -ms-linear-gradient(bottom, #002100 1%, #003400 51%);
+								background-image: -webkit-gradient(
+									linear,
+									left bottom,
+									left top,
+									color-stop(0.01, #002100),
+									color-stop(0.51, #003400));" >
+		<div id="greenBar">
+				<div id="loggedInMenubar" style="width:1088px; min-width:980px; margin:0 auto;">
+					<div id="logoContainer" style="width:187px; padding-left: 30px; padding-top:42px; z-index:5; float:left;">
+						<img src="/assets/Huddlers_Logo.png" style="height:25px;"/>
+					</div>
+				</div>
+		</div>
+	</div>
+	<div id="signUpContentContainer" style="width:500px; padding-bottom:1em; border-style:solid; border-width:1px; margin:0 auto;">
+		<div id="errorMessages" style="width:400px; min-width:300px; margin:0 auto;">
+			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+			<%= devise_error_messages! %>
+		</div>
+		<div id="signUpPage" style="width:400px; margin:0 auto;">
+				<div id="signUpForm" style="margin-top:1em;">
+					  <table style="font-size:13px;">
+					  	  <tr>
+						  <td><%= f.label :email, :class => "form_label" %> </td>
+						  <td><%= f.email_field :email, :class => "form_field" %></td>
+						  </tr>
+						  <tr>
+						  <td><%= f.label :first_name, "First Name", :class => "form_label" %> </td>
+						  <td><%= f.text_field :first_name, :class => "form_field" %></td>
+						  </tr>
+						  <tr>
+						  <td><%= f.label :last_name, "Last Name", :class => "form_label" %> </td>
+						  <td><%= f.text_field :last_name, :class => "form_field" %></td>
+						  </tr>
+						  <tr>
+						  <td><%= f.label :password, :class => "form_label" %> </td>
+						  <td><%= f.password_field :password, :class => "form_field" %></td>
+						  </tr>
+						  <tr>
+						  <td><%= f.label :password_confirmation, "Confirm Password", :class => "form_label" %> </td>
+						  <td><%= f.password_field :password_confirmation, :class => "form_field" %></td>
+						  </tr>
+						  <tr>
+						  <td></td>
+						  <td><%= f.submit "", :class=>"signUpButton" %></td>
+						  </tr>
+						  <tr>
+						  <td></td>
+						  <td><%= render :partial => "devise/shared/links" %></td>
+						  </tr>
+					  </table>
+					<% end %>
+				</div>
+		</div>
+	</div>
+</div>	
 
-  <div><%= f.label :last_name, "Last Name" %><br />
-  <%= f.text_field :last_name %></div>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
+</body>

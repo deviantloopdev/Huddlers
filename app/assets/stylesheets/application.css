@@ -11,8 +11,13 @@ body {
   width:100%;
   margin: 0 auto;
   background-color: white;
-  font-family: Eurostile-Reg;;
+  font-family: Eurostile-Reg;
   font-size: 14px;
+  color: #002100;
+}
+
+b {
+	font-family:Eurostile-Bol;
 }
 
 a img {
