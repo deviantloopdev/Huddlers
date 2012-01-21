@@ -1,4 +1,8 @@
 class PicturesController < ApplicationController
+  def index
+    @picture = Picture.new(:user_id => current_user.id)
+  end
+  
   def new
     @picture = Picture.new(:user_id => current_user.id)
   end

@@ -5,12 +5,21 @@
 		padding: 0; 
 	}
 	
-	#navlist li
+	#navlist2 li
 	{
 		display: inline;
 		list-style-type: none;
 		list-style: none;
 		display:inline-block;
+		border-top-left-radius: 5px; 
+		border-top-right-radius: 5px;
+		text-decoration:none; 
+		color:black; 
+		background-color:#A9A9A9; 
+		padding-left:25px; 
+		padding-right:25px; 
+		padding-top:7px;
+		padding-bottom:17px; 
 	}
 </style>
 
@@ -39,6 +48,13 @@
 		
 	});
 </script>
+<script>
+function DoNav(theUrl)
+  {
+  	  document.location.href = theUrl;
+  }
+</script>
+  
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script type="text/javascript" src="/assets/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 <script type="text/javascript" src="/assets/fancybox/jquery.easing-1.4.pack.js"></script>
@@ -46,16 +62,36 @@
 <link rel="stylesheet" href="/assets/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 
 <div id="trophyRoomOuterContainer" style="width:1086px; min-width:980px; margin:0 auto;">
-	<h1>Trophy Room</h1>
+	<div id="trophyRoomIntro">
+		<a href="/card/1" style="color:black; text-decoration:none;"><img src="/assets/a2.png" style="padding-right:0.5em;"/>BACK TO MY CARD</a><br />
+		<h2><b>TROPHY ROOM</b></h2>
+	</div>
+	<div id="addNew"><a id="inline" href="#newPic">Add a New Picture!</a></div>
 	
-		<div id="navcontainer" style="position:relative; top:10px;  z-index: -100;">
-			<ul id="navlist">
-				<li style="border-top-left-radius: 5px; border-top-right-radius: 5px;text-decoration:none; color:black; background-color:#A9A9A9; padding-left:25px; padding-right:25px; padding-top:7px; padding-bottom:7px;"><a href="#">Achievements</a></li>
-				<li style="border-top-left-radius: 5px; border-top-right-radius: 5px;text-decoration:none; color:black; background-color:#E9EAEA; padding-left:25px; padding-right:25px; padding-top:7px; padding-bottom:7px;"><a href="#">Photos</a></li>
+		<!-- <div id="navcontainer2" style="position:relative; top:10px;  z-index: -100;">
+			<ul id="navlist2">
+				<li style="background-color:#A9A9A9;" onclick="DoNav('/achievements');">Achievements</li>
+				<li style="background-color:#E9EAEA;"><a href="#"; return false>Photos</a></li>
 			</ul>
-		</div>
-		<div style="background-color:#E9EAEA; padding-top:1.5em; padding-left:1.3em; z-index:100; border-top-right-radius:8px; border-bottom-left-radius:8px; border-bottom-right-radius:8px;">
-			<div style="display:none;"><div id="pic1">
+		</div> -->
+		<table style="
+		text-decoration:none; 
+		color:black; 
+		padding-top:7px;
+		padding-bottom:17px;">
+			<tr>
+				<td><a href="achievements" style="text-decoration:none; color:white; background-color:#A9A9A9; border-top-left-radius: 5px; border-top-right-radius: 5px; padding:1em;">Achievements</a></td>
+				<td style="background-color:#E9EAEA; color:black; border-top-left-radius: 5px; border-top-right-radius: 5px; padding:1em;">Photos</td>
+			</tr>
+		</table>
+		<div style="position:relative; top:-2em; left:0.25em; background-color:#E9EAEA; padding-top:1.5em; padding-left:1.3em; z-index:100; border-top-right-radius:8px; border-bottom-left-radius:8px; border-bottom-right-radius:8px;">
+			<div style="display:none;">
+			<div id="newPic">
+				<h1>New Picture</h1>
+				<%= render 'form' %>
+			</div>
+			
+			<div id="pic1">
 				<center>
 					<img src="/assets/adam1.png" style="max-height:500px; max-width:500px;"/>
 				</center>
