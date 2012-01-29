@@ -40,9 +40,10 @@ ActiveRecord::Schema.define(:version => 20120129172002) do
   end
 
   create_table "organizations", :force => true do |t|
-    t.string   "name"
+    t.string   "organization_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "organizations_users", :force => true do |t|
