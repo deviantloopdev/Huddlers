@@ -1,7 +1,7 @@
 class OrganizationsController < ApplicationController
   def index
     @org_profile = Organization.find(params[:id])
-    if @org_profile is nil
+    if @org_profile == nil
       render :action => 'new'
     end
   end
