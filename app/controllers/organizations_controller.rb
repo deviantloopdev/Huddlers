@@ -1,9 +1,9 @@
 class OrganizationsController < ApplicationController
   def show
     @org_profile = Organization.find(params[:id])
-    if @org_profile.nil?
-      redirect_to :controller => 'organizations'
-    end
+    # if @org_profile.nil?
+      # redirect_to :controller => 'organizations'
+    # end
   end
   
   def index
