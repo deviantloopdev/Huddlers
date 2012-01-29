@@ -1,13 +1,13 @@
 class OrganizationsController < ApplicationController
   def show
-    @org_profile = Organization.find(params[:id])
+    @organization = Organization.find(params[:id])
     # if @org_profile.nil?
       # redirect_to :controller => 'organizations'
     # end
   end
   
   def index
-    @org = Organization.where(:user_id => current_user.id)
+    @organization = Organization.where(:user_id => current_user.id)
   end
   
   def new

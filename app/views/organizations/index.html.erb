@@ -38,4 +38,8 @@ function DoNav(theUrl)
 
 <div id="organizationOuterContainer" style="width:1086px; min-width:980px; margin:0 auto;">
 	<h1>Organization Page</h1>
+	
+	<% for organization in current_user.organizations %>
+		<%= current_user.first_name %> is a member of: <%= organization.organization_name %>
+	<% end %>
 </div>
