@@ -1,3 +1,6 @@
 <h2>SHOW a specific Organization</h2>
 
-<strong>This is the <%= @org_profile.organization_name %> organization</strong>
+<strong>This is the <%= @organization.organization_name %> organization</strong>
+
+
+<%= link_to "FAN!", :controller => "organizations", :action => "add", :id => "@organization.id" %>
