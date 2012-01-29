@@ -10,6 +10,16 @@ class OrganizationsController < ApplicationController
     @organization = Organization.where(:user_id => current_user.id)
   end
   
+  def add
+    @organization = Organization.find(params[:id])
+    @organization.users << current_user
+    if @organization.save
+      redirect_to :controller => 'organizations'
+    else
+      render :action => 'new'
+    end
+  end
+  
   def new
     @organization = Organization.new(:user_id => current_user.id)
   end
