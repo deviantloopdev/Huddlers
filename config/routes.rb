@@ -6,7 +6,7 @@ Huddlers::Application.routes.draw do
   get "huddlers_card/card"
 	get "achievements/index"
   match "card/:id" => "huddlers_card#card"
-  get "organization/index"
+  get "organizations/index"
   match "organization/:id" => "organizations#index"
    
   get "huddlers_card/trophy_room"
@@ -20,7 +20,7 @@ Huddlers::Application.routes.draw do
 	resources :posts
   resources :huddlers_card
   resources :achievements
-  resources :organizations :collection => { :new => :get }
+  resources :organizations
   root :to => "newsfeed#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
