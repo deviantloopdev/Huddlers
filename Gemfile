@@ -6,7 +6,7 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'therubyracer'
+# gem 'therubyracer'
 gem 'devise', "~> 1.5.0"
 gem 'facebox-rails'
 gem 'annotate'

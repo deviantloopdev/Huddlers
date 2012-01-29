@@ -1,0 +1,9 @@
+<%= form_for @organization do |f| %>
+  <%= f.error_messages %>
+  <%= f.hidden_field :user_id %>
+  <p>
+    <%= f.label :organization_name %><br />
+    <%= f.text_field :organization_name %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
