@@ -1,4 +1,11 @@
 class OrganizationsController < ApplicationController
+  def index
+    @org_profile = Organization.find(params[:id])
+    if @org_profile is nil
+      render :action => 'new'
+    end
+  end
+  
   def new
     @organization = Organization.new(:user_id => current_user.id)
   end
