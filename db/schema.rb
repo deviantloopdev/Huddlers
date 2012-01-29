@@ -11,21 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120108145254) do
+ActiveRecord::Schema.define(:version => 20120129172002) do
 
   create_table "comments", :force => true do |t|
+    t.integer  "post_id"
+    t.integer  "picture_id"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "body"
     t.string   "type_of"
-    t.integer  "post_id"
+    t.integer  "creator_id"
+    t.integer  "element_id"
+    t.integer  "profile_id"
   end
 
   create_table "fans", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type_of_content"
-    t.integer  "post_id"
+    t.integer  "creator_id"
+    t.integer  "element_id"
+    t.integer  "profile_id"
   end
 
   create_table "huddlers_cards", :force => true do |t|
@@ -33,7 +39,21 @@ ActiveRecord::Schema.define(:version => 20120108145254) do
     t.datetime "updated_at"
   end
 
+  create_table "organizations", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "organizations_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "organization_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pictures", :force => true do |t|
+    t.integer  "user_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -41,12 +61,12 @@ ActiveRecord::Schema.define(:version => 20120108145254) do
   end
 
   create_table "posts", :force => true do |t|
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "body"
     t.boolean  "friend_vs_group"
     t.boolean  "status_update"
-    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
