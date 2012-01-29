@@ -2,7 +2,7 @@ class OrganizationsController < ApplicationController
   def show
     @org_profile = Organization.find(params[:id])
     if @org_profile.nil?
-      render :action => 'new'
+      redirect_to :controller => 'organizations'
     end
   end
   
