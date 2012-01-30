@@ -31,7 +31,7 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.new(params[:organization])
+    @team = Team.new(params[:team])
     @team.users << current_user
     if @team.save
       # flash[:notice] = "Successfully created organization."
@@ -49,7 +49,7 @@ class TeamsController < ApplicationController
   def update
     @team = Team.find(params[:id])
     
-    if @team.update_attributes(params[:organization])
+    if @team.update_attributes(params[:team])
       # flash[:notice] = "Successfully updated painting."
       # # redirect_to @organization.gallery
       redirect_to :controller => 'teams'

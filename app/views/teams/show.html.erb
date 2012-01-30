@@ -5,9 +5,9 @@
 	<h2><%= @team.team_name %></h2><br/>
 	
 	<% if @team.users.where(:id => current_user.id).empty? %>
-		<%= link_to "JOIN!", :controller => "organizations", :action => "add", :id => params[:id] %><br />
+		<%= link_to "JOIN!", :controller => "teams", :action => "add", :id => params[:id] %><br />
 	<% else %>
-		<%= link_to "LEAVE!", :controller => "organizations", :action => "remove", :id => params[:id] %><br />
+		<%= link_to "LEAVE!", :controller => "teams", :action => "remove", :id => params[:id] %><br />
 	<% end %>
 	
 	This organization's ID Number is: <%= @team.id %> <br/>
