@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(:version => 20120130001952) do
     t.string   "organization_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "pictures", :force => true do |t|
@@ -86,7 +85,6 @@ ActiveRecord::Schema.define(:version => 20120130001952) do
     t.integer  "weight"
     t.integer  "age"
     t.string   "city",                                  :default => ""
-    t.integer  "organization_id"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
