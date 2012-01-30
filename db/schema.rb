@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20120130003306) do
 
   create_table "organizations_users", :id => false, :force => true do |t|
     t.integer "organization_id"
-    t.integer "product_id"
+    t.integer "user_id"
   end
 
   create_table "pictures", :force => true do |t|
