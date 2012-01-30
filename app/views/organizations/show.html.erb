@@ -1,8 +1,29 @@
-<h2>SHOW a specific Organization</h2>
-
-<strong>This is the <%= @organization.organization_name %> organization</strong><br/>
-<div>
-	This organization's ID Number is: <%= @organization.id %> </br>
-	<%= link_to "FAN!", :controller => "organizations", :action => "add", :id => params[:id] %>
+<div id="orgShowContainer" style="width:1088px; min-width:980px; margin:0 auto;">
+	
+	<strong>SHOW Organization</strong>
+	
+	<h2><%= @organization.organization_name %></h2><br/>
+	
+	<% if @organization.users.where(:id => current_user.id).empty? %>
+		<%= link_to "FAN!", :controller => "organizations", :action => "add", :id => params[:id] %><br />
+	<% else %>
+		<%= link_to "UNFAN!", :controller => "organizations", :action => "remove", :id => params[:id] %><br />
+	<% end %>
+	
+	This organization's ID Number is: <%= @organization.id %> <br/>
+	
+	About: <%= @organization.description %> <br />
+	
+	Phone Number: <%= @organization.contact_number %> <br/>
+	
+	Website: <%= @organization.website %> <br />
+	
+	Location: <%= @organization.street_address %><br/>
+	<% if @organization.city.empty? %>
+		<%= @organization.state %> <br/>
+	<% else %>
+		<%= @organization.city %>, <%= @organization.state %> <br/>
+	<% end %> 
+	<%= @organization.zipcode %> <br/>
+	
 </div>
-<%= link_to "Remove Organization", :controller => "organizations", :action => "remove", :id => params[:id] %>

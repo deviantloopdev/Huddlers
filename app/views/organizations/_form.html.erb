@@ -4,5 +4,29 @@
     <%= f.label :organization_name, "Organization Name" %><br />
     <%= f.text_field :organization_name %>
   </p>
+  <p>
+    <%= f.label :description, "About This Organization" %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :street_address, "Address" %><br />
+    <%= f.text_field :street_address %>
+  </p>
+  <p>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state, "Province/State" %><br />
+    <%= f.text_field :state %>
+  </p>
+  <p>
+    <%= f.label :zipcode, "ZIP Code" %><br />
+    <%= f.text_field :zipcode %>
+  </p>
+  <p>
+    <%= f.label :website, "Web Address" %><br />
+    <%= f.text_field :website %>
+  </p>
   <p><%= f.submit %></p>
 <% end %>

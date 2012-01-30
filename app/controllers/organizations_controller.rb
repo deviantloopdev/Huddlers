@@ -13,9 +13,9 @@ class OrganizationsController < ApplicationController
     @organization = Organization.find(params[:id])
     if @organization.users.where(:id => current_user.id).empty?
       @organization.users << current_user
-      redirect_to :controller => 'organizations', :action => 'show', :id => params[:id]
+      render :controller => 'organizations', :action => 'show', :id => params[:id]
     else
-      render :controller => 'organizations', :action => 'index'
+      render :controller => 'organizations', :action => 'show', :id => params[:id]
     end
   end
   
@@ -23,7 +23,7 @@ class OrganizationsController < ApplicationController
     @organization = Organization.find(params[:id])
     @organization.users.delete(User.find_by_id(current_user.id))
     # flash[:notice] = "Successfully destroyed organization."
-    redirect_to :controller => 'organizations'
+    render :controller => 'organizations', :action => 'show', :id => params[:id]
   end
   
   def new
@@ -34,7 +34,7 @@ class OrganizationsController < ApplicationController
     @organization = Organization.new(params[:organization])
     @organization.users << current_user
     if @organization.save
-      flash[:notice] = "Successfully created painting."
+      # flash[:notice] = "Successfully created organization."
       # redirect_to @organization.gallery
       redirect_to :controller => 'organizations'
     else

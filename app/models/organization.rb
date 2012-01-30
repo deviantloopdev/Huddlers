@@ -8,5 +8,6 @@ class Organization < ActiveRecord::Base
   
   has_and_belongs_to_many :users
   
-  attr_accessible :organization_name
+  validates_presence_of :organization_name
+  attr_accessible :organization_name, :description, :contact_number, :street_address, :city, :state, :zipcode, :website
 end
