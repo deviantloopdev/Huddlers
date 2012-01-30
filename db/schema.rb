@@ -77,8 +77,8 @@ ActiveRecord::Schema.define(:version => 20120130065740) do
   create_table "teams", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "team_name",   :default => ""
-    t.string   "description", :default => ""
+    t.string   "team_name"
+    t.string   "description"
   end
 
   create_table "teams_users", :id => false, :force => true do |t|
