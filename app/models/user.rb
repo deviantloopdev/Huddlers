@@ -14,4 +14,5 @@ class User < ActiveRecord::Base
   has_many :pictures
   has_many :posts
   has_and_belongs_to_many :organizations
+  has_and_belongs_to_many :teams
 end

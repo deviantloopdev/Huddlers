@@ -1,0 +1,17 @@
+<div id="orgShowContainer" style="width:1088px; min-width:980px; margin:0 auto;">
+	
+	<strong>SHOW Team</strong>
+	
+	<h2><%= @team.team_name %></h2><br/>
+	
+	<% if @team.users.where(:id => current_user.id).empty? %>
+		<%= link_to "JOIN!", :controller => "organizations", :action => "add", :id => params[:id] %><br />
+	<% else %>
+		<%= link_to "LEAVE!", :controller => "organizations", :action => "remove", :id => params[:id] %><br />
+	<% end %>
+	
+	This organization's ID Number is: <%= @team.id %> <br/>
+	
+	About: <%= @team.description %> <br />
+	
+</div>

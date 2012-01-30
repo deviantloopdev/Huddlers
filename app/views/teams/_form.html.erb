@@ -1,0 +1,12 @@
+<%= form_for @team do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :team_name, "Team Name" %><br />
+    <%= f.text_field :team_name %>
+  </p>
+  <p>
+    <%= f.label :description, "About This Team" %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

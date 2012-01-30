@@ -1,5 +1,5 @@
 Huddlers::Application.routes.draw do
-  
+  root :to => "newsfeed#index"
   devise_for :users
 
   get "newsfeed/index"
@@ -12,6 +12,11 @@ Huddlers::Application.routes.draw do
   match "add/:id" => "organizations#add"
   get "organizations/remove"
   match "add/:id" => "organizations#remove"
+  
+  get "teams/add"
+  match "add/:id" => "teams#add"
+  get "teams/remove"
+  match "add/:id" => "teams#remove"
    
   get "huddlers_card/trophy_room"
   match "/posts/index" => "posts#index"
@@ -25,7 +30,8 @@ Huddlers::Application.routes.draw do
   resources :huddlers_card
   resources :achievements
   resources :organizations
-  root :to => "newsfeed#index"
+  resources :teams
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
