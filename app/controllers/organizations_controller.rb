@@ -7,25 +7,25 @@ class OrganizationsController < ApplicationController
   end
   
   def index
-    @organization = Organization.where(:user_id => current_user.id)
   end
   
   def add
     @organization = Organization.find(params[:id])
-    @organization.users << current_user
-    if @organization.save
-      redirect_to :controller => 'organizations'
+    if @organization.users.where(:id => current_user.id).empty?
+      @organization.users << current_user
+      redirect_to :controller => 'organizations', :action => 'show', :id => '@organization.id'
     else
-      render :action => 'new'
+      reender :controller => 'organizations', :action => 'show', :id => '@organization.id'
     end
   end
   
   def new
-    @organization = Organization.new(:user_id => current_user.id)
+    @organization = Organization.new
   end
 
   def create
     @organization = Organization.new(params[:organization])
+    @organization.users << current_user
     if @organization.save
       flash[:notice] = "Successfully created painting."
       # redirect_to @organization.gallery
