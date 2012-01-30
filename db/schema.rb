@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130053139) do
+ActiveRecord::Schema.define(:version => 20120130061234) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -72,6 +72,11 @@ ActiveRecord::Schema.define(:version => 20120130053139) do
     t.string   "body"
     t.boolean  "friend_vs_group"
     t.boolean  "status_update"
+  end
+
+  create_table "teams", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
