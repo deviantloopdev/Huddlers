@@ -1,6 +1,5 @@
 class Organization < ActiveRecord::Base
   belongs_to :user #Admin  
-  has_many :users #Fans
   # has_one :huddlers_card
   # has_many :users #Folowers
   

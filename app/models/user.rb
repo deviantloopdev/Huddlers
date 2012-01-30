@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
   
   validates_presence_of :first_name, :last_name
   has_one :huddlers_card
-  belongs_to :organization
   has_many :organizations
   has_many :pictures
   has_many :posts
