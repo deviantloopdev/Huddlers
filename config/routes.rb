@@ -8,6 +8,8 @@ Huddlers::Application.routes.draw do
   match "card/:id" => "huddlers_card#card"
   # get "organizations/index"
   # match "index/:id" => "organizations#index"
+  get "organizations/add"
+  match "add/:id" => "organizations#add"
    
   get "huddlers_card/trophy_room"
   match "/posts/index" => "posts#index"
