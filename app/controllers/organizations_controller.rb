@@ -34,6 +34,13 @@ class OrganizationsController < ApplicationController
     @organization = Organization.new(params[:organization])
     @organization.users << current_user
     if @organization.save
+      @activity = Activity.new(:user_id => current_user.id, :organization_id => @organization.id,
+        :organization_name => @organization.organization_name, :description => @organization.description,
+        :contact_number => @organization.contact_number, :street_address => @organization.street_address,
+        :city => @organization.city, :state => @organization.state, :zipcode => @organization.zipcode,
+        :website => @organization.website, :trait => "ORGANIZATION")
+      @activity.save
+        
       # flash[:notice] = "Successfully created organization."
       # redirect_to @organization.gallery
       redirect_to :controller => 'organizations'
