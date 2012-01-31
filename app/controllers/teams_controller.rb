@@ -34,6 +34,9 @@ class TeamsController < ApplicationController
     @team = Team.new(params[:team])
     @team.users << current_user
     if @team.save
+      @activity = Activity.new(:user_id => current_user.id, :team_name => @team.team_name, 
+        :description => @team.description, :trait => "TEAM")
+      @activity.save
       # flash[:notice] = "Successfully created organization."
       # redirect_to @organization.gallery
       redirect_to :controller => 'teams'
@@ -50,6 +53,8 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
     
     if @team.update_attributes(params[:team])
+      @activity.update_attributes(:user_id => current_user.id, :team_name => @team.team_name, 
+        :description => @team.description, :trait => "TEAM")
       # flash[:notice] = "Successfully updated painting."
       # # redirect_to @organization.gallery
       redirect_to :controller => 'teams'

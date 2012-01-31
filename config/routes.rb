@@ -17,6 +17,8 @@ Huddlers::Application.routes.draw do
   match "add/:id" => "teams#add"
   get "teams/remove"
   match "add/:id" => "teams#remove"
+  
+  get "activities/index"
    
   get "huddlers_card/trophy_room"
   match "/posts/index" => "posts#index"

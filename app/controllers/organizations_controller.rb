@@ -57,6 +57,14 @@ class OrganizationsController < ApplicationController
     @organization = Organization.find(params[:id])
     
     if @organization.update_attributes(params[:organization])
+      @activity = Activity.find_by_organization_id(@organization.id)
+      @activity.update_attributes(:user_id => current_user.id, :organization_id => @organization.id,
+        :organization_name => @organization.organization_name, :description => @organization.description,
+        :contact_number => @organization.contact_number, :street_address => @organization.street_address,
+        :city => @organization.city, :state => @organization.state, :zipcode => @organization.zipcode,
+        :website => @organization.website, :trait => "ORGANIZATION")
+      # @activity.save
+      
       # flash[:notice] = "Successfully updated painting."
       # # redirect_to @organization.gallery
       redirect_to :controller => 'organizations'

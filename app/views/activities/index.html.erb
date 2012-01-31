@@ -1,0 +1,15 @@
+<h2>Activity Feed</h2>
+
+<div>
+	<ul>
+		<% for activity in @activities %>
+			<% if activity.trait == "ORGANIZATION" %>
+				<li><%= User.find_by_id(activity.user_id).first_name %> <%= User.find_by_id(activity.user_id).last_name %> has joined <%= activity.organization_name %><br />
+				<%= activity.updated_at %></li>
+			<% elsif activity.trait == "TEAM" %>
+				<li><%= User.find_by_id(activity.user_id).first_name %> <%= User.find_by_id(activity.user_id).last_name %> has joined <%= activity.team_name %><br />
+				<%= activity.updated_at %></li>
+			<% end %>
+		<% end %>
+	</ul>
+</div>
